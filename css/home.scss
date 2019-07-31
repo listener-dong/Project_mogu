@@ -69,7 +69,8 @@
 
         .haader_wrap {
             height: 100px;
-            background: pink;
+            // background: pink;
+            position: relative;
 
             .logo {
                 float: left;
@@ -89,6 +90,7 @@
                 i {
                     width: 18px;
                     height: 12px;
+                    margin-right: 6px;
                     display: inline-block;
                     background-image: url(../images/mulu.png);
                 }
@@ -96,7 +98,7 @@
 
             .header_wrap_cont {
                 float: left;
-                margin-left: 76px;
+                margin-left: 56px;
 
                 .search {
                     width: 552px;
@@ -125,10 +127,88 @@
 
                 .item_nav {
                     float: left;
+                    margin: 31px 0 0 14px;
+
+                    a {
+                        float: left;
+                        color: #333;
+                        padding: 0 14px;
+                        text-align: center;
+
+                        img {
+                            width: 24px;
+                            height: 24px;
+                            margin-bottom: 6px;
+                        }
+
+                        span {
+                            display: block;
+                            font-size: 12px;
+                            line-height: 12px;
+                        }
+                    }
                 }
 
                 .login {
                     float: left;
+                    margin: 36px 0 0 40px;
+
+                    img {
+                        width: 30px;
+                        height: 30px;
+                    }
+
+                    span {
+                        color: #333;
+                        font-size: 12px;
+                        line-height: 30px;
+                        margin-left: 6px;
+                    }
+                }
+            }
+
+            .about_content {
+                width: 960px;
+                height: 360px;
+                background: #fff;
+                position: absolute;
+                top: 0;
+                right: 0;
+                box-shadow: 0 0 10px #ddd;
+                display: none;
+
+                .about_nav {
+                    float: left;
+                    width: 160px;
+                    margin-top: 34px;
+                    padding-left: 42px;
+                    box-sizing: border-box;
+
+                    dt {
+                        font-size: 14px;
+                        line-height: 14px;
+                        color: #333;
+                        position: relative;
+                        margin-bottom: 34px;
+                    }
+
+                    dt::after {
+                        content: "";
+                        display: block;
+                        width: 30px;
+                        height: 1px;
+                        position: absolute;
+                        left: 0;
+                        top: 20px;
+                        background: #949590;
+                    }
+
+                    dd {
+                        font-size: 12px;
+                        line-height: 12px;
+                        color: #949590;
+                        margin-bottom: 16px;
+                    }
                 }
             }
         }

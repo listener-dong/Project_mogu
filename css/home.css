@@ -71,7 +71,7 @@
 
 #home #header .haader_wrap {
   height: 100px;
-  background: pink;
+  position: relative;
 }
 
 #home #header .haader_wrap .logo {
@@ -93,13 +93,14 @@
 #home #header .haader_wrap .category i {
   width: 18px;
   height: 12px;
+  margin-right: 6px;
   display: inline-block;
   background-image: url(../images/mulu.png);
 }
 
 #home #header .haader_wrap .header_wrap_cont {
   float: left;
-  margin-left: 76px;
+  margin-left: 56px;
 }
 
 #home #header .haader_wrap .header_wrap_cont .search {
@@ -129,8 +130,86 @@
 
 #home #header .haader_wrap .header_wrap_cont .item_nav {
   float: left;
+  margin: 31px 0 0 14px;
+}
+
+#home #header .haader_wrap .header_wrap_cont .item_nav a {
+  float: left;
+  color: #333;
+  padding: 0 14px;
+  text-align: center;
+}
+
+#home #header .haader_wrap .header_wrap_cont .item_nav a img {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 6px;
+}
+
+#home #header .haader_wrap .header_wrap_cont .item_nav a span {
+  display: block;
+  font-size: 12px;
+  line-height: 12px;
 }
 
 #home #header .haader_wrap .header_wrap_cont .login {
   float: left;
+  margin: 36px 0 0 40px;
+}
+
+#home #header .haader_wrap .header_wrap_cont .login img {
+  width: 30px;
+  height: 30px;
+}
+
+#home #header .haader_wrap .header_wrap_cont .login span {
+  color: #333;
+  font-size: 12px;
+  line-height: 30px;
+  margin-left: 6px;
+}
+
+#home #header .haader_wrap .about_content {
+  width: 960px;
+  height: 360px;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  right: 0;
+  box-shadow: 0 0 10px #ddd;
+  display: none;
+}
+
+#home #header .haader_wrap .about_content .about_nav {
+  float: left;
+  width: 160px;
+  margin-top: 34px;
+  padding-left: 42px;
+  box-sizing: border-box;
+}
+
+#home #header .haader_wrap .about_content .about_nav dt {
+  font-size: 14px;
+  line-height: 14px;
+  color: #333;
+  position: relative;
+  margin-bottom: 34px;
+}
+
+#home #header .haader_wrap .about_content .about_nav dt::after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 1px;
+  position: absolute;
+  left: 0;
+  top: 20px;
+  background: #949590;
+}
+
+#home #header .haader_wrap .about_content .about_nav dd {
+  font-size: 12px;
+  line-height: 12px;
+  color: #949590;
+  margin-bottom: 16px;
 }
