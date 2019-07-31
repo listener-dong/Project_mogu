@@ -1,0 +1,33 @@
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1564574816722'); /* IE9 */
+  src: url('iconfont.eot?t=1564574816722#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAPcAAsAAAAACGAAAAOPAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDIgqEAIM1ATYCJAMUCwwABCAFhG0HVhs/B8gehXFjXWIWH19uJrEGT2T39aq7Btuz88FodXS4UH7nCFAuKpOCRM6oSPjfNU07IMrzZTUmhXDwk14Pci+XkhvrAuqpqb3pqflNSPZbaYD9z+X0pjXB5rfsXBpr4l7aUS/AOKCAxtoU0QAKhBvGbiJoiIchgKMcD67m5c0dVIsCRgkgkzUqodqMHW0oF0IEv2KhImvxCM0ycx1Yw78vH+ghIRg8C5jYZ+ySimZfb399yM79P5fBFEExnRcwloEFOoFQkJGV/sFURIlOVOC87SrpBsJHEczrHa8P/f8PU+oOcjtsMxkCtvHPA/EBpaUA1Ms6vSwFFsPC6x3yKsNB2YrIhkNyEgM8z0JwQAmwF7gIYLSikyAoNpOuSEnVcZnOKizv3NkjPXOXXbv5FT37xXnOoLw3t60hI5WlhiS6YBMyczfWJ5ZvdnnztjTEKzZ1odzG+lKNrTd9P5+f26nmlnd3b57XQ4sr1DouYq60rVZcY5QlXC41kWwpNvTPbbCDLkZzm3uhW7rnIb+ps3Pjxu5pM/doz02Pd+83iDtwc2Aa7hff3kL6Jb2X3UBIdn4TZNBDzDx7aZKLlh+bwzF1U+7vIf2W5utVKlga7MZoJTqdv8Jf6qemTAp8zw6WDnh5vDlunpggMpE7OdErfvqlWxtZHyUPJsbN5pTyhbjz1aVTdWuPp+pOLZ36v1z5O63/c/POXoNNx+35Tdiz0Ngrdchr09zWLT2Tv1paJr53vhxOAhAyJ+ShSj0BYOvMneAE9+k//Bu+Y9XDWqq/hpEC8GTcoeGyXeluDO84IPA/FR3r1FcBh6duLZa7AY/eqUEYwOGAP1kJkOFzGmO+cykIIfkEDAFlYAlphSrZCTwieoFPSB04OrKyPCILpwLREqADdxIIKZ7AkOAaWFK8o0p+gEeBP/BJiQXHIMluGNFGJtQ3cZAEqFhOYk1hFkEuUS/Kt4BGDYmnVZy3B9zRwjjYpVs+vQIW8CmmODEaEoJgwpmJl6XjwDAYtjmLgCJ8YSHscX/XsVUv8inMRPU0wQEkBIAKRiYJRkOBYUFoc0F94fNbAJQoBhK8gdaj7gFwHLT2MUF8BDqgK3qrE+1WnnGIQQkhEBAwBA7DBLMseQEDJhgYu7pfBEBB4CM8IGYzjl9pRLrqfcsbzXfcAjjAFE+MWFHxxCfud5VvShY1YIHZyeZM72DlGFUTleOZCQgBAA==') format('woff2'),
+  url('iconfont.woff?t=1564574816722') format('woff'),
+  url('iconfont.ttf?t=1564574816722') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1564574816722#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-RectangleCopy:before {
+  content: "\e6a4";
+}
+
+.icon-RectangleCopy1:before {
+  content: "\e6a5";
+}
+
+.icon-edit:before {
+  content: "\e69a";
+}
+
+.icon-home:before {
+  content: "\e69b";
+}
+

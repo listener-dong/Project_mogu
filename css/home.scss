@@ -1,0 +1,136 @@
+.content {
+    width: 1190px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.clear::after {
+    content: "";
+    height: 0;
+    display: block;
+    overflow: hidden;
+    clear: both;
+    visibility: hidden;
+}
+
+#home {
+    width: 100%;
+
+    #header {
+        width: 100%;
+
+        .header_nav {
+            height: 33px;
+            border-bottom: 1px solid #ccc;
+
+            .header_nav_content {
+                float: right;
+
+                .header_nav_li {
+                    float: left;
+                    color: #999;
+                    font-size: 12px;
+                    line-height: 33px;
+                    height: 33px;
+                    display: block;
+                    padding: 0 20px;
+                    position: relative;
+
+                    i {
+                        margin-right: 4px;
+                    }
+
+                    .icon-home,
+                    .icon-edit {
+                        color: #ff4465;
+                    }
+                }
+
+                .header_nav_li:before {
+                    content: "";
+                    display: block;
+                    width: 1px;
+                    height: 12px;
+                    background: #999;
+                    position: absolute;
+                    top: 12px;
+                    left: 0;
+                }
+
+                .header_nav_li:first-child:before {
+                    display: none;
+                }
+
+                .about {
+                    padding-right: 0;
+                }
+            }
+        }
+
+        .haader_wrap {
+            height: 100px;
+            background: pink;
+
+            .logo {
+                float: left;
+                background-image: url(../images/logo_260x200.png);
+                width: 130px;
+                height: 100px;
+                background-size: contain;
+                text-indent: -999px;
+            }
+
+            .category {
+                float: left;
+                font-size: 14px;
+                line-height: 14px;
+                margin: 44px 0 0 30px;
+
+                i {
+                    width: 18px;
+                    height: 12px;
+                    display: inline-block;
+                    background-image: url(../images/mulu.png);
+                }
+            }
+
+            .header_wrap_cont {
+                float: left;
+                margin-left: 76px;
+
+                .search {
+                    width: 552px;
+                    overflow: hidden;
+                    border-radius: 6px;
+                    position: relative;
+                    margin-top: 28px;
+                    float: left;
+
+                    .val {
+                        width: 100%;
+                        height: 48px;
+                        background: #f7f7f7;
+                    }
+
+                    .search_btn {
+                        width: 58px;
+                        height: 100%;
+                        background-image: url(../images/181205_2llkjh1g0fe27h51ahh5k5f27gkk9_116x96.png);
+                        background-size: contain;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                    }
+                }
+
+                .item_nav {
+                    float: left;
+                }
+
+                .login {
+                    float: left;
+                }
+            }
+        }
+    }
+}
