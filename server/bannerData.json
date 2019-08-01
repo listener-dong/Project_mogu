@@ -124,7 +124,7 @@
     }],
     "show": {
         "left": [{
-            "lt": "当季热卖",
+            "lt": "当季热卖123",
             "li": [{
                 "ln": "oversizeT恤",
                 "ls": "true"

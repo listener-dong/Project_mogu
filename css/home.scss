@@ -119,8 +119,6 @@
 
         .haader_wrap {
             height: 100px;
-            // background: pink;
-            // position: relative;
 
             .logo {
                 float: left;
@@ -275,6 +273,7 @@
         height: 440px;
 
         .banner_nav {
+            float: left;
             width: 256px;
             height: 100%;
             background: #f1faff;
@@ -287,7 +286,6 @@
                 .nav_li {
                     width: 100%;
                     height: 31px;
-                    background: pink;
 
                     .nav_titile {
                         float: left;
@@ -317,44 +315,142 @@
                         color: #666;
                     }
                 }
+
+                .active {
+                    background: #fff;
+                }
             }
 
-            .nav_show {
+            .show_cont {
+                display: none;
                 position: absolute;
                 top: 0;
                 left: 256px;
                 width: 768px;
                 height: 100%;
-                background: yellowgreen;
+                background: #fff;
+                border: 1px solid #f2f2f2;
+                border-left: 1px solid #fff;
+                box-sizing: border-box;
 
-                .show_cont {
-                    .left_content {
-                        .left_cont {
-                            .left_tit {
-                                font-size: 14px;
-                                color: #333;
-                                font-weight: bold;
+                .left_content {
+                    padding: 30px 20px 0 20px;
+                    box-sizing: border-box;
+                    float: left;
+                    width: 520px;
+                    height: 100%;
+                    border-right: 1px solid #f6f6f6;
+
+                    .left_cont {
+                        margin-bottom: 22px;
+
+                        .left_tit {
+                            float: left;
+                            font-size: 14px;
+                            line-height: 14px;
+                            color: #333;
+                            font-weight: bold;
+                            margin-bottom: 14px;
+                        }
+
+                        .more {
+                            float: right;
+                            font-size: 12px;
+                            line-height: 14px;
+                            color: #333;
+
+                            .bt {
+                                width: 12px;
+                                height: 12px;
+                                display: inline-block;
+                                background-size: contain;
+                                background-image: url(../images/yjt.png);
+                            }
+                        }
+
+                        .left_ul {
+                            .l_li {
+                                float: left;
+                                font-size: 12px;
+                                line-height: 12px;
+                                margin-right: 20px;
+                                margin-bottom: 14px;
                             }
 
-                            .left_ul {
-                                .l_li {
-                                    float: left;
-                                    font-size: 12px;
-                                }
+                            .true {
+                                color: #ff4466;
+                            }
 
-                                .true {
-                                    color: #ff4466;
-                                }
-
-                                .false {
-                                    color: #949590;
-                                }
+                            .false {
+                                color: #949590;
                             }
                         }
                     }
                 }
+
+                .right_content {
+                    float: left;
+                    width: 246px;
+                    text-align: center;
+                    padding: 0 16px;
+                    box-sizing: border-box;
+
+                    .ti_title {
+                        font-size: 16px;
+                        line-height: 16px;
+                        color: #333;
+                        margin: 18px 0 16px;
+                    }
+
+                    .ul_cont {
+                        width: 100%;
+
+                        .r_li {
+                            float: left;
+                            margin-right: 14px;
+
+                            img {
+                                width: 100px;
+                                height: 100px;
+                            }
+
+                            .r_name {
+                                width: 100px;
+                                font-size: 12px;
+                                line-height: 12px;
+                                color: #333;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+                                margin: 4px 0 12px;
+
+                            }
+                        }
+
+                        .r_li:nth-child(2n) {
+                            margin-right: 0;
+                        }
+                    }
+                }
+            }
+
+            .show_block {
+                display: block;
             }
         }
 
+        .banner_slider {
+            float: left;
+            width: 778px;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+
+            img {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
     }
 }
