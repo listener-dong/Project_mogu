@@ -24,6 +24,7 @@
 #home #header .header_nav {
   height: 33px;
   border-bottom: 1px solid #ccc;
+  position: relative;
 }
 
 #home #header .header_nav .header_nav_content {
@@ -38,7 +39,6 @@
   height: 33px;
   display: block;
   padding: 0 20px;
-  position: relative;
 }
 
 #home #header .header_nav .header_nav_content .header_nav_li i {
@@ -69,9 +69,58 @@
   padding-right: 0;
 }
 
+#home #header .header_nav .header_nav_content .about .about_content {
+  width: 960px;
+  height: 360px;
+  background: #fff;
+  position: absolute;
+  top: 34px;
+  right: 0;
+  box-shadow: 0 0 10px #ddd;
+  display: none;
+  z-index: 1;
+}
+
+#home #header .header_nav .header_nav_content .about .about_content .about_nav {
+  float: left;
+  width: 160px;
+  margin-top: 34px;
+  padding-left: 42px;
+  box-sizing: border-box;
+}
+
+#home #header .header_nav .header_nav_content .about .about_content .about_nav dt {
+  font-size: 14px;
+  line-height: 14px;
+  color: #333;
+  position: relative;
+  margin-bottom: 34px;
+}
+
+#home #header .header_nav .header_nav_content .about .about_content .about_nav dt::after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 1px;
+  position: absolute;
+  left: 0;
+  top: 20px;
+  background: #949590;
+}
+
+#home #header .header_nav .header_nav_content .about .about_content .about_nav dd {
+  font-size: 12px;
+  line-height: 12px;
+  color: #949590;
+  margin-bottom: 16px;
+}
+
+#home #header .header_nav .header_nav_content .about .show_about {
+  display: block;
+}
+
 #home #header .haader_wrap {
   height: 100px;
-  position: relative;
 }
 
 #home #header .haader_wrap .logo {
@@ -115,6 +164,8 @@
 #home #header .haader_wrap .header_wrap_cont .search .val {
   width: 100%;
   height: 48px;
+  color: #949590;
+  text-indent: 16px;
   background: #f7f7f7;
 }
 
@@ -169,47 +220,56 @@
   margin-left: 6px;
 }
 
-#home #header .haader_wrap .about_content {
-  width: 960px;
-  height: 360px;
-  background: #fff;
-  position: absolute;
-  top: 0;
-  right: 0;
-  box-shadow: 0 0 10px #ddd;
-  display: none;
+#home #title {
+  width: 100%;
+  height: 40px;
+  border-bottom: 2px #ff4465 solid;
 }
 
-#home #header .haader_wrap .about_content .about_nav {
+#home #title .title_ti {
   float: left;
-  width: 160px;
-  margin-top: 34px;
-  padding-left: 42px;
+  width: 256px;
+  height: 100%;
+  background: #ff4465;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  color: #fff;
+  font-size: 18px;
+  line-height: 40px;
+  padding-left: 20px;
   box-sizing: border-box;
 }
 
-#home #header .haader_wrap .about_content .about_nav dt {
-  font-size: 14px;
-  line-height: 14px;
+#home #title .title_ti i {
+  background-image: url(../images/mulu_w.png);
+  display: inline-block;
+  width: 16px;
+  height: 12px;
+  margin-right: 8px;
+}
+
+#home #title .limit {
+  float: left;
   color: #333;
+  font-size: 18px;
+  padding: 0 36px;
+  line-height: 40px;
   position: relative;
-  margin-bottom: 34px;
 }
 
-#home #header .haader_wrap .about_content .about_nav dt::after {
-  content: "";
+#home #title .limit::after {
   display: block;
-  width: 30px;
-  height: 1px;
-  position: absolute;
-  left: 0;
-  top: 20px;
+  content: "";
+  width: 1px;
+  height: 20px;
   background: #949590;
+  position: absolute;
+  right: 0;
+  top: 10px;
 }
 
-#home #header .haader_wrap .about_content .about_nav dd {
-  font-size: 12px;
-  line-height: 12px;
-  color: #949590;
-  margin-bottom: 16px;
+#home #banner {
+  background: #bae9fd;
+  width: 100%;
+  height: 440px;
 }

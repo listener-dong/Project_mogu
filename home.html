@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/home.css">
     <link rel="stylesheet" href="./css/iconfont.css">
+    <script src="./js/jquery-3.4.1.js"></script>
+    <script src="./js/home.js"></script>
 </head>
 
 <body>
@@ -20,7 +22,51 @@
                         <a href="" class="header_nav_li"><i class="iconfont icon-home"></i>首页</a>
                         <a href="" class="header_nav_li"><i class="iconfont icon-edit"></i>商城</a>
                         <a href="" class="header_nav_li">我的订单</a>
-                        <a href="" class="header_nav_li about">关于我们<i class="iconfont icon-RectangleCopy"></i></a>
+                        <a href="" class="header_nav_li about">关于我们<i class="iconfont icon-RectangleCopy"></i>
+                            <div class="about_content">
+                                <dl class="about_nav">
+                                    <dt>新手帮助</dt>
+                                    <dd>常见问题</dd>
+                                    <dd>自助服务</dd>
+                                    <dd>联系客服</dd>
+                                    <dd>意见反馈</dd>
+                                </dl>
+                                <dl class="about_nav">
+                                    <dt>权益保障</dt>
+                                    <dd>全国包邮</dd>
+                                    <dd>7天无理由退货</dd>
+                                    <dd>退货运费补贴</dd>
+                                    <dd>限时发货</dd>
+                                </dl>
+                                <dl class="about_nav">
+                                    <dt>支付方式</dt>
+                                    <dd>微信支付</dd>
+                                    <dd>支付宝</dd>
+                                    <dd>白富美支付</dd>
+                                </dl>
+                                <dl class="about_nav">
+                                    <dt>移动客户端下载</dt>
+                                    <dd>蘑菇街</dd>
+                                    <dd>美丽说</dd>
+                                    <dd>uni引力</dd>
+                                </dl>
+                                <dl class="about_nav">
+                                    <dt>商家服务</dt>
+                                    <dd>商家入驻</dd>
+                                    <dd>蘑菇街商学院</dd>
+                                    <dd>商家社区</dd>
+                                    <dd>规则中心</dd>
+                                    <dd>规则众议院</dd>
+                                </dl>
+                                <dl class="about_nav">
+                                    <dt>关于我们</dt>
+                                    <dd>招聘信息</dd>
+                                    <dd>联系我们</dd>
+                                    <dd>有害信息举报</dd>
+                                    <dd>用户隐私保护</dd>
+                                </dl>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -49,63 +95,19 @@
                                 alt=""><span>登录</span>
                         </div>
                     </div>
-                    <div class="about_content">
-                        <dl class="about_nav">
-                            <dt>新手帮助</dt>
-                            <dd>常见问题</dd>
-                            <dd>自助服务</dd>
-                            <dd>联系客服</dd>
-                            <dd>意见反馈</dd>
-                        </dl>
-                        <dl class="about_nav">
-                            <dt>权益保障</dt>
-                            <dd>全国包邮</dd>
-                            <dd>7天无理由退货</dd>
-                            <dd>退货运费补贴</dd>
-                            <dd>限时发货</dd>
-                        </dl>
-                        <dl class="about_nav">
-                            <dt>支付方式</dt>
-                            <dd>微信支付</dd>
-                            <dd>支付宝</dd>
-                            <dd>白富美支付</dd>
-                        </dl>
-                        <dl class="about_nav">
-                            <dt>移动客户端下载</dt>
-                            <dd>蘑菇街</dd>
-                            <dd>美丽说</dd>
-                            <dd>uni引力</dd>
-                        </dl>
-                        <dl class="about_nav">
-                            <dt>商家服务</dt>
-                            <dd>商家入驻</dd>
-                            <dd>蘑菇街商学院</dd>
-                            <dd>商家社区</dd>
-                            <dd>规则中心</dd>
-                            <dd>规则众议院</dd>
-                        </dl>
-                        <dl class="about_nav">
-                            <dt>关于我们</dt>
-                            <dd>招聘信息</dd>
-                            <dd>联系我们</dd>
-                            <dd>有害信息举报</dd>
-                            <dd>用户隐私保护</dd>
-                        </dl>
-                    </div>
                 </div>
             </div>
         </div>
+        <div id="title">
+            <div class="content">
+                <h2 class="title_ti"><i></i>主题市场</h2>
+                <span class="limit">限时抢购</span>
+            </div>
+        </div>
+        <div id="banner">
+        </div>
     </div>
     <script>
-        let li = document.getElementsByClassName("about")[0];
-        let oi = document.getElementsByClassName("about_content")[0];
-        console.log(li);
-        li.onclick = function (e) {
-            //阻止标签默认事件
-            e.preventDefault();
-            console.log("11")
-            oi.style.display = "block";
-        }
     </script>
 </body>
 

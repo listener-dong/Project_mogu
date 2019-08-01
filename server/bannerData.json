@@ -1,0 +1,53 @@
+[{
+    "title": "上衣",
+    "tist": [{
+        "name": "T恤",
+        "state": true
+    }, {
+        "name": "衬衫",
+        "state": false
+    }, {
+        "name": "春夏外套",
+        "state": false
+    }],
+    "show": {
+        "left": [{
+            "lt": "当季热卖",
+            "li": [{
+                "ln": "oversizeT恤",
+                "ls": true
+            }, {
+                "ln": "oversizeT恤",
+                "ls": false
+            }]
+        }, {
+            "lt": "流行新品",
+            "li": [{
+                "ln": "oversizeT恤",
+                "ls": true
+            }, {
+                "ln": "oversizeT恤",
+                "ls": false
+            }]
+        }, {
+            "lt": "潮流时尚",
+            "li": [{
+                "ln": "oversizeT恤",
+                "ls": true
+            }, {
+                "ln": "oversizeT恤",
+                "ls": false
+            }]
+        }],
+        "right": {
+            "rt": "猜您喜欢",
+            "ri": [{
+                "src": "https://s11.mogucdn.com/mlcdn/c45406/170822_70aj5hgka6l8ccgkke47dl0fih7c9_640x960.jpg_200x200.v1cAC.40.webp",
+                "rn": "2019春季新品韩版V领收腰长袖衬衫白色灯笼袖蝴蝶结衬衣上衣"
+            }, {
+                "src": "https://s11.mogucdn.com/mlcdn/c45406/170822_70aj5hgka6l8ccgkke47dl0fih7c9_640x960.jpg_200x200.v1cAC.40.webp",
+                "rn": "2019春季新品韩版V领收腰长袖衬衫白色灯笼袖蝴蝶结衬衣上衣"
+            }]
+        }
+    }
+}]
