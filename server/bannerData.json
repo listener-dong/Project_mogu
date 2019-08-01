@@ -2,52 +2,224 @@
     "title": "上衣",
     "tist": [{
         "name": "T恤",
-        "state": true
+        "state": "true"
     }, {
         "name": "衬衫",
-        "state": false
+        "state": "false"
     }, {
         "name": "春夏外套",
-        "state": false
+        "state": "false"
     }],
     "show": {
         "left": [{
             "lt": "当季热卖",
             "li": [{
                 "ln": "oversizeT恤",
-                "ls": true
+                "ls": "true"
             }, {
-                "ln": "oversizeT恤",
-                "ls": false
+                "ln": "针织开衫",
+                "ls": "false"
+            }, {
+                "ln": "长款防晒衫",
+                "ls": "false"
+            }, {
+                "ln": "雪纺背心",
+                "ls": "false"
+            }, {
+                "ln": "印花T恤",
+                "ls": "false"
             }]
         }, {
             "lt": "流行新品",
             "li": [{
-                "ln": "oversizeT恤",
-                "ls": true
+                "ln": "字母T恤",
+                "ls": "true"
             }, {
-                "ln": "oversizeT恤",
-                "ls": false
+                "ln": "短袖T恤",
+                "ls": "false"
+            }, {
+                "ln": "短袖雪纺",
+                "ls": "false"
+            }, {
+                "ln": "蕾丝衫",
+                "ls": "false"
+            }, {
+                "ln": "露脐T恤",
+                "ls": "false"
+            }, {
+                "ln": "轻薄外套",
+                "ls": "false"
             }]
         }, {
             "lt": "潮流时尚",
             "li": [{
-                "ln": "oversizeT恤",
-                "ls": true
+                "ln": "性感V领",
+                "ls": "true"
             }, {
-                "ln": "oversizeT恤",
-                "ls": false
+                "ln": "喇叭袖",
+                "ls": "false"
+            }, {
+                "ln": "刺绣",
+                "ls": "false"
+            }, {
+                "ln": "情侣装",
+                "ls": "false"
+            }, {
+                "ln": "经典格纹",
+                "ls": "false"
+            }, {
+                "ln": "百搭圆领",
+                "ls": "false"
+            }, {
+                "ln": "荷叶边",
+                "ls": "false"
+            }, {
+                "ln": "绑带衬衫",
+                "ls": "false"
+            }, {
+                "ln": "条纹控",
+                "ls": "false"
+            }, {
+                "ln": "白衬衫",
+                "ls": "false"
+            }, {
+                "ln": "显瘦衬衣",
+                "ls": "false"
+            }, {
+                "ln": "衬衫搭配",
+                "ls": "false"
+            }, {
+                "ln": "卫衣搭配",
+                "ls": "false"
             }]
         }],
-        "right": {
-            "rt": "猜您喜欢",
-            "ri": [{
-                "src": "https://s11.mogucdn.com/mlcdn/c45406/170822_70aj5hgka6l8ccgkke47dl0fih7c9_640x960.jpg_200x200.v1cAC.40.webp",
-                "rn": "2019春季新品韩版V领收腰长袖衬衫白色灯笼袖蝴蝶结衬衣上衣"
+        "right": [{
+            "src": "https://s11.mogucdn.com/mlcdn/c45406/170822_70aj5hgka6l8ccgkke47dl0fih7c9_640x960.jpg_200x200.v1cAC.40.webp",
+            "rn": "2019春季新品韩版V领收腰长袖衬衫白色灯笼袖蝴蝶结衬衣上衣"
+        }, {
+            "src": "https://s11.mogucdn.com/mlcdn/c45406/170509_2e43ef0a3ifjl39jbg8bdb7fce0hg_640x960.jpg_200x200.v1cAC.40.webp",
+            "rn": "2019夏季新款韩版学院ulzzang百搭纯色圆领短袖体恤中袖学生T恤女"
+        }, {
+            "src": "https://s3.mogucdn.com/mlcdn/55cf19/190425_1ej5lc8ffa108dj5906f82ab9l0fk_640x960.jpg_200x200.v1cAC.40.webp",
+            "rn": "夏装韩版个性露背印花假两件连衣裙大码宽松中长款短袖t恤女"
+        }, {
+            "src": "https://s11.mogucdn.com/mlcdn/c45406/190331_133i01b0gj4a9kdaa67fj659k683g_640x960.jpg_200x200.v1cAC.40.webp",
+            "rn": "夏季女装港味短袖T恤学生韩版涂鸦印花宽松百搭半袖中长款上衣服"
+        }, {
+            "src": "https://s11.mogucdn.com/mlcdn/c45406/180502_87a6170egcl616b47c5hicddaj7d6_640x960.jpg_200x200.v1cAC.40.webp",
+            "rn": "开叉t恤女短袖宽松港风百搭纯色半袖上衣服夏季学生bf打底衫潮"
+        }]
+    }
+}, {
+    "title": "上衣",
+    "tist": [{
+        "name": "T恤",
+        "state": "true"
+    }, {
+        "name": "衬衫",
+        "state": "false"
+    }, {
+        "name": "春夏外套",
+        "state": "false"
+    }],
+    "show": {
+        "left": [{
+            "lt": "当季热卖",
+            "li": [{
+                "ln": "oversizeT恤",
+                "ls": "true"
             }, {
-                "src": "https://s11.mogucdn.com/mlcdn/c45406/170822_70aj5hgka6l8ccgkke47dl0fih7c9_640x960.jpg_200x200.v1cAC.40.webp",
-                "rn": "2019春季新品韩版V领收腰长袖衬衫白色灯笼袖蝴蝶结衬衣上衣"
+                "ln": "针织开衫",
+                "ls": "false"
+            }, {
+                "ln": "长款防晒衫",
+                "ls": "false"
+            }, {
+                "ln": "雪纺背心",
+                "ls": "false"
+            }, {
+                "ln": "印花T恤",
+                "ls": "false"
             }]
-        }
+        }, {
+            "lt": "流行新品",
+            "li": [{
+                "ln": "字母T恤",
+                "ls": "true"
+            }, {
+                "ln": "短袖T恤",
+                "ls": "false"
+            }, {
+                "ln": "短袖雪纺",
+                "ls": "false"
+            }, {
+                "ln": "蕾丝衫",
+                "ls": "false"
+            }, {
+                "ln": "露脐T恤",
+                "ls": "false"
+            }, {
+                "ln": "轻薄外套",
+                "ls": "false"
+            }]
+        }, {
+            "lt": "潮流时尚",
+            "li": [{
+                "ln": "性感V领",
+                "ls": "true"
+            }, {
+                "ln": "喇叭袖",
+                "ls": "false"
+            }, {
+                "ln": "刺绣",
+                "ls": "false"
+            }, {
+                "ln": "情侣装",
+                "ls": "false"
+            }, {
+                "ln": "经典格纹",
+                "ls": "false"
+            }, {
+                "ln": "百搭圆领",
+                "ls": "false"
+            }, {
+                "ln": "荷叶边",
+                "ls": "false"
+            }, {
+                "ln": "绑带衬衫",
+                "ls": "false"
+            }, {
+                "ln": "条纹控",
+                "ls": "false"
+            }, {
+                "ln": "白衬衫",
+                "ls": "false"
+            }, {
+                "ln": "显瘦衬衣",
+                "ls": "false"
+            }, {
+                "ln": "衬衫搭配",
+                "ls": "false"
+            }, {
+                "ln": "卫衣搭配",
+                "ls": "false"
+            }]
+        }],
+        "right": [{
+            "src": "https://s11.mogucdn.com/mlcdn/c45406/170822_70aj5hgka6l8ccgkke47dl0fih7c9_640x960.jpg_200x200.v1cAC.40.webp",
+            "rn": "2019春季新品韩版V领收腰长袖衬衫白色灯笼袖蝴蝶结衬衣上衣"
+        }, {
+            "src": "https://s11.mogucdn.com/mlcdn/c45406/170509_2e43ef0a3ifjl39jbg8bdb7fce0hg_640x960.jpg_200x200.v1cAC.40.webp",
+            "rn": "2019夏季新款韩版学院ulzzang百搭纯色圆领短袖体恤中袖学生T恤女"
+        }, {
+            "src": "https://s3.mogucdn.com/mlcdn/55cf19/190425_1ej5lc8ffa108dj5906f82ab9l0fk_640x960.jpg_200x200.v1cAC.40.webp",
+            "rn": "夏装韩版个性露背印花假两件连衣裙大码宽松中长款短袖t恤女"
+        }, {
+            "src": "https://s11.mogucdn.com/mlcdn/c45406/190331_133i01b0gj4a9kdaa67fj659k683g_640x960.jpg_200x200.v1cAC.40.webp",
+            "rn": "夏季女装港味短袖T恤学生韩版涂鸦印花宽松百搭半袖中长款上衣服"
+        }, {
+            "src": "https://s11.mogucdn.com/mlcdn/c45406/180502_87a6170egcl616b47c5hicddaj7d6_640x960.jpg_200x200.v1cAC.40.webp",
+            "rn": "开叉t恤女短袖宽松港风百搭纯色半袖上衣服夏季学生bf打底衫潮"
+        }]
     }
 }]

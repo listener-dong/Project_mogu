@@ -273,5 +273,88 @@
         background: #bae9fd;
         width: 100%;
         height: 440px;
+
+        .banner_nav {
+            width: 256px;
+            height: 100%;
+            background: #f1faff;
+            position: relative;
+
+            .nav_ul {
+                padding: 3px 0;
+                box-sizing: border-box;
+
+                .nav_li {
+                    width: 100%;
+                    height: 31px;
+                    background: pink;
+
+                    .nav_titile {
+                        float: left;
+                        margin: 0 12px 0 18px;
+                        font-size: 14px;
+                        color: #333;
+                        font-weight: bold;
+                        line-height: 31px;
+                    }
+
+                    .nav_i {
+                        float: left;
+                        font-size: 12px;
+                        line-height: 31px;
+                        margin-right: 18px;
+                    }
+
+                    .nav_i:last-child {
+                        margin-right: 0;
+                    }
+
+                    .true {
+                        color: #ff4466;
+                    }
+
+                    .false {
+                        color: #666;
+                    }
+                }
+            }
+
+            .nav_show {
+                position: absolute;
+                top: 0;
+                left: 256px;
+                width: 768px;
+                height: 100%;
+                background: yellowgreen;
+
+                .show_cont {
+                    .left_content {
+                        .left_cont {
+                            .left_tit {
+                                font-size: 14px;
+                                color: #333;
+                                font-weight: bold;
+                            }
+
+                            .left_ul {
+                                .l_li {
+                                    float: left;
+                                    font-size: 12px;
+                                }
+
+                                .true {
+                                    color: #ff4466;
+                                }
+
+                                .false {
+                                    color: #949590;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
     }
 }
