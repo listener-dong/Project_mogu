@@ -10,20 +10,26 @@
 </head>
 
 <body>
-    <dl class="nav_more_wrap">
-        <dt class="more_list_title"><a target="_blank" class="more_list_title_a nav_more_list_head">当季热卖</a> <a
-                target="_blank" class="more_list_title_more fr">更多<span class="checkMoreArchor"></span></a></dt>
-        <dd class="more_list clearfix"><a class="more_list_item_a" target="_blank">oversizeT恤</a><a
-                class="more_list_item_a" target="_blank">针织开衫</a><a class="more_list_item_a" target="_blank">内搭</a><a
-                class="more_list_item_a" target="_blank">长款防晒衫</a><a class="more_list_item_a" target="_blank">雪纺背心</a><a
-                class="more_list_item_a" target="_blank">印花T恤</a></dd>
-    </dl>
+    <div class="fl item-box cube-acm-node has-log-mod">
+        <a class="goods-image J_dynamic_imagebox J_loading_success" target="_blank">
+            <img class="J_dynamic_img fill_img"
+                src="https://s11.mogucdn.com/mlcdn/c45406/190723_1aedk6221iga273374jeehfka98j9_640x960.jpg_400x9999.v1c7E.81.webp"
+                alt=""></a> <a class="goods-title" target="_blank">法式初恋小个子气质小黑裙</a>
+        <div class="goods-price"> <em>¥59</em> <del>¥114.15</del> </div>
+    </div>
     <script>
-        var ul = document.getElementsByClassName("nav_more_wrap");
-        for (i = 0; i < ul.length; i++) {
-            var ti = document.querySelector(".nav_more_wrap .more_list_title_a")[0];
-            console.log(ti.innerText);
-        }
+        // let a = $(".fl").find("em").eq(0).html().substr(1);
+        // console.log(a);
+        var arrT = [];
+        $(".fl").each(function (index, item) {
+            var o = {};
+            o.src = $(item).find(".fill_img")[0].src;
+            o.title = $(item).find(".goods-title").html();
+            o.original_price = Number($(item).find("em").eq(0).html().substr(1));
+            o.sale_price = Number($(item).find("del").eq(0).html().substr(1));
+            arrT.push(o);
+        })
+        console.log(arrT)
     </script>
 </body>
 
