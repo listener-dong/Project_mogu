@@ -3,7 +3,7 @@ $(function () {
     $(".about").hover(function () {
         $(".about_content").toggleClass("show_about");
     });
-    let p1 = new Promise(function (resolve, reject) {
+    new Promise(function (resolve, reject) {
         //发送网络请求，banner-nav实例化对象
         $.ajax({
             type: "get",
@@ -74,52 +74,145 @@ $(function () {
                 }
                 let test = new BannerNav(JSON.parse(response));
                 test.init();
+                resolve();
             }
         });
-    })
+    }).then(function () {
+        return new Promise(function (resolve, reject) {
+            //发送网络请求，banner-slider实例化对象
+            $.ajax({
+                type: "get",
+                url: "./server/bannerPhoto.json",
+                dataType: "json",
+                success: function (response) {
+                    class BannerSlider {
+                        constructor(data) {
+                            this.data = data;
+                            this.oSlider = null;
+                            this.oPhoto = null;
+                            this.oDirection = null;
+                            this.oNumber = null;
+                            this.index = 0;
+                            this.times = 0;
+                            this.pictureWidth = 0;
+                            this.timer = null;
+                        }
+                        // 初始化
+                        init() {
+                            this.createHtml();
+                            this.autoPlayer();
+                            this.clickDirection();
+                            this.addMouse();
+                            this.clickNumber();
+                            this.switchNum(0);
+                            //获取元素自身的宽度
+                            this.pictureWidth = this.oPhoto.eq(0).children().eq(0).width();
+                        }
+                        // 创建轮播图标签
+                        createHtml() {
+                            this.oSlider = $("<div class='banner_slider'></div>");
+                            $("#banner .content").append(this.oSlider);
+                            this.creatPhoto();
+                            this.createDirection();
+                            this.createNumber();
+                        }
+                        //创建背景图标签
+                        creatPhoto() {
+                            let photos = this.data.map((ele, i) => {
+                                this.index = i;
+                                return `<li class="photo_li"><img src=./images/${ele}></li>`;
+                            }).join("");
+                            this.oPhoto = $("<ul></ul>").addClass("photo_ul");
+                            this.oPhoto.html(photos);
+                            this.oSlider.append(this.oPhoto);
+                        }
+                        //创建方向箭头标签
+                        createDirection() {
+                            this.oDirection = $("<div></div>").addClass("direction");
+                            let html = `<span class="before"></span><span class="last"></span>`;
+                            this.oDirection.html(html);
+                            this.oSlider.append(this.oDirection);
+                        }
+                        //创建数字选择标签
+                        createNumber() {
+                            this.oNumber = $("<ul></ul>").addClass("number");
+                            let lis = "";
+                            for (let i = 0; i < this.index + 1; i++) {
+                                lis = '<li class="num"></li>' + lis;
+                            }
+                            this.oSlider.append(this.oNumber.html(lis));
+                        }
+                        //背景图自动轮播
+                        autoPlayer() {
+                            //定时器
+                            this.timer = setInterval(() => {
+                                this.after();
+                            }, 2000);
+                        }
+                        //下一张
+                        after() {
+                            this.times++;
+                            //临界值检查，到最后一张后往第一张跳
+                            if (this.times > this.oPhoto.children().length - 1) {
+                                this.times = 0;
+                            }
+                            this.oPhoto.css("left", -this.times * this.pictureWidth + "px");
+                            this.switchNum(this.times);
+                        }
+                        //上一张
+                        before() {
+                            this.times--;
+                            //临界值检查，到最后一张后往第一张跳
+                            if (this.times < 0) {
+                                this.times = this.oPhoto.children().length - 1
+                            }
+                            this.oPhoto.css("left", -this.times * this.pictureWidth + "px");
+                            this.switchNum(this.times);
+                        }
+                        //鼠标点击箭头上下切换
+                        clickDirection() {
+                            //拿到页面中上下张切换的标签
+                            this.oDirection.on("click", (e) => {
+                                if (e.target.className == "before") {
+                                    this.before();
+                                } else if (e.target.className == "last") {
+                                    this.after();
+                                }
+                            })
+                        }
+                        //鼠标的移入移出事件
+                        addMouse() {
+                            this.oSlider.on("mouseenter", () => {
+                                clearInterval(this.timer);
+                            })
+                            this.oSlider.on("mouseleave", () => {
+                                this.autoPlayer();
+                            })
+                        }
+                        //鼠标点击序列切换
+                        clickNumber() {
+                            let self = this;
+                            this.oNumber.on("click", "li", function (e) {
+                                let index = $(this).index();
+                                self.times = index;
+                                self.oPhoto.css("left", -self.times * self.pictureWidth + "px");
+                                self.switchNum(self.times);
 
-    let p2 = new Promise(function (resolve, reject) {
-        //发送网络请求，banner-slider实例化对象
-        $.ajax({
-            type: "get",
-            url: "./server/banner.php",
-            // data: "data",
-            // dataType: "dataType",
-            success: function (response) {
-                class BannerSlider {
-                    constructor() {
-                        this.oSlider = null;
+                            })
+                        }
+                        //给序列做排他处理
+                        switchNum(index) {
+                            let lis = this.oNumber.children();
+                            lis.eq(index).addClass("active").siblings().removeClass("active");
+                        }
                     }
-                    // 初始化
-                    init() {
-                        this.createHtml();
-                    }
-                    // 创建轮播图标签
-                    createHtml() {
-                        this.oSlider = $("<div class='banner_slider'></div>");
-                        $("#banner .content").append(this.oSlider);
-                        this.oSlider.html(`<img src="./images/190611_5ffffgbhfk1h5d35hb99e99c57dil_1134x440.jpg">`);
-                    }
+                    let test = new BannerSlider(response);
+                    test.init();
+                    resolve();
                 }
-                let test = new BannerSlider();
-                test.init();
-            }
+            })
         })
+    }).then(function () {
+        $(".banner_member").appendTo("#banner .content");
     })
-
-    let p3 = new Promise(function (resolve, reject) {
-        $.ajax({
-            type: "get",
-            url: "./server/banner.php",
-            // data: "data",
-            // dataType: "dataType",
-            success: function (response) {
-                console.log($(".banner_member")[0]);
-                console.log($("#banner .content")[0]);
-                $(".banner_member").appendTo("#banner .content");
-            }
-        });
-    })
-    Promise.all([p1, p2, p3]);
-
 })

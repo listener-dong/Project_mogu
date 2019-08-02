@@ -10,32 +10,20 @@
 </head>
 
 <body>
-    <dl class="nav_wrap">
-        <dt class="nav_list_title"> <a rel="nofollow" class="catagory color_false" target="_blank">上衣</a>
-        </dt>
-        <dd class="nav_list_content"> <span class="nav_list_content_span"> <a rel="nofollow" class="first color_true"
-                    target="_blank">T恤
-                    <span class="nav_list_tagicon"></span> </a> <ins></ins> <a rel="nofollow" class="color_false"
-                    target="_blank">衬衫
-                </a> <ins class="when_960_hidden"></ins> <a class="when_960_hidden color_false" rel="nofollow"
-                    target="_blank">春夏外套
-                </a> </span> </dd>
+    <dl class="nav_more_wrap">
+        <dt class="more_list_title"><a target="_blank" class="more_list_title_a nav_more_list_head">当季热卖</a> <a
+                target="_blank" class="more_list_title_more fr">更多<span class="checkMoreArchor"></span></a></dt>
+        <dd class="more_list clearfix"><a class="more_list_item_a" target="_blank">oversizeT恤</a><a
+                class="more_list_item_a" target="_blank">针织开衫</a><a class="more_list_item_a" target="_blank">内搭</a><a
+                class="more_list_item_a" target="_blank">长款防晒衫</a><a class="more_list_item_a" target="_blank">雪纺背心</a><a
+                class="more_list_item_a" target="_blank">印花T恤</a></dd>
     </dl>
     <script>
-        let navs = document.getElementsByClassName("nav_wrap");
-        let obj = {};
-        console.log(navs[0].querySelectorAll("nav_list_title"))
-        //     let = `"title": "上衣",
-        // "tist": [{
-        //     "name": "T恤",
-        //     "state": "true"
-        // }, {
-        //     "name": "衬衫",
-        //     "state": "false"
-        // }, {
-        //     "name": "春夏外套",
-        //     "state": "false"
-        // }]`
+        var ul = document.getElementsByClassName("nav_more_wrap");
+        for (i = 0; i < ul.length; i++) {
+            var ti = document.querySelector(".nav_more_wrap .more_list_title_a")[0];
+            console.log(ti.innerText);
+        }
     </script>
 </body>
 
