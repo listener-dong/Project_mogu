@@ -242,15 +242,9 @@ $(function () {
                             //左侧倒计时
                             let oLeft = $("<div></div>").addClass("countdown").html("<img src=./images/180423_4c1k410gfcjj100b7ck185ldbc1d4_460x588.png_999x999.v1c0.81.webp>");
                             oLeft.append(this.countdownTime());
-
-                            //右侧轮播图
-                            let oRight = $("<div></div>").addClass("slider");
-                            // this.sliderWithTop(data,);
-                            $.getSliderTop(this.data);
-
-
                             let oCountdown = $("<div></div>").addClass("countdown_slider");
                             oCountdown.append(oLeft);
+                            oCountdown.append(this.sliderWithTop()); //右侧轮播图导入
                             this.oPanic.append(oCountdown);
                         }
                         //创建下部标签
@@ -279,12 +273,21 @@ $(function () {
                             return oPanic_time;
                         }
                         //轮播图
-                        sliderWithTop() {}
+                        sliderWithTop() {
+                            //思路：拿到所有的数据，水平排列
+                            let slider_lis = this.data.map(ele => {
+                                return `<li class="goods"><div class="img"><img src=${ele.src}></div><p class="title">${ele.title}</p><p class="price"><span class="original_price">￥${ele.original_price}</span><del class="sale_price">￥${ele.sale_price}</del></p></li>`;
+                            }).join("");
+                            let slider_jt = $("<div></div>").addClass("jiant").html("<span class='before'></span><span class='after'></span>");
+                            let slider_ul = `<ul class="slider_goods">${slider_lis}</ul>`;
+                            let slider_cont = $("<div></div>").addClass("slider_content").html(slider_ul);
+                            let oRight = $("<div></div>").addClass("slider");
+                            oRight.append(slider_jt).append(slider_cont);
+                            return oRight;
+                        }
                     }
                     let test = new PanicManger(response);
                     test.init();
-                    // test.countdownTime();
-                    resolve();
                 }
             });
         })

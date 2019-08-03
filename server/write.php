@@ -13,9 +13,9 @@ for ($i = 0; $i < count($data); $i++) {
     $original_price = $data[$i]["original_price"];
     $sale_price = $data[$i]["sale_price"];
     $sql = "INSERT INTO `project_mogu`.`panic` (`pid`, `src`, `title`, `original_price`, `sale_price`) VALUES ('$i', '$src', ' $title', '$original_price', ' $sale_price')";
-    mysqli_query($con, $sql);
-    mysql_query("set names 'utf8' ");
-    mysql_query("set character_set_client=utf8");
-    mysql_query("set character_set_results=utf8");
-    // echo $sql;
+    echo $sql;
+    // mysqli_query($con, $sql);
+    // // mysql_query("set names 'utf8' ");
+    // // mysql_query("set character_set_client=utf8");
+    // // mysql_query("set character_set_results=utf8");
 }
