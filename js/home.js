@@ -13,7 +13,6 @@ $(function () {
                 class BannerNav {
                     constructor(data) {
                         this.data = data;
-                        console.log(this.data)
                         this.oNav = null;
                         this.oShow = null;
                     }
@@ -214,5 +213,80 @@ $(function () {
         })
     }).then(function () {
         $(".banner_member").appendTo("#banner .content");
+    }).then(function () {
+        return new Promise(function (resolve) {
+            //发送网络请求，panic实例化对象
+            $.ajax({
+                type: "get",
+                url: "./server/panicData.json",
+                // data: "data",
+                dataType: "json",
+                success: function (response) {
+                    class PanicManger {
+                        constructor(data) {
+                            this.data = data;
+                            this.oPanic = null;
+                            // console.log(this.data);
+                        }
+                        //初始化
+                        init() {
+                            this.createHtml();
+                        }
+                        //创建页面标签
+                        createHtml() {
+                            this.oPanic = $("#panic .content");
+                            this.createTop();
+                        }
+                        //创建上部标签
+                        createTop() {
+                            //左侧倒计时
+                            let oLeft = $("<div></div>").addClass("countdown").html("<img src=./images/180423_4c1k410gfcjj100b7ck185ldbc1d4_460x588.png_999x999.v1c0.81.webp>");
+                            oLeft.append(this.countdownTime());
+
+                            //右侧轮播图
+                            let oRight = $("<div></div>").addClass("slider");
+                            // this.sliderWithTop(data,);
+                            $.getSliderTop(this.data);
+
+
+                            let oCountdown = $("<div></div>").addClass("countdown_slider");
+                            oCountdown.append(oLeft);
+                            this.oPanic.append(oCountdown);
+                        }
+                        //创建下部标签
+                        createBottom() {}
+                        //倒计时方法
+                        countdownTime() {
+                            let oPanic_time = $("<div></div>").addClass("time");
+                            let times = setInterval(function () {
+                                //结束时间
+                                let endTime = new Date(2019, (8 - 1), 5, 0, 0);
+                                let nowTime = new Date();
+                                let testTime = (endTime.getTime() - nowTime.getTime()) / 1000;
+                                //时分秒
+                                let h = getNum(Math.floor(testTime / 60 / 60));
+                                let m = getNum(Math.floor(testTime / 60 % 60));
+                                let s = getNum(Math.floor(testTime % 60));
+                                oPanic_time.html(`<span>${h}</span>:<span>${m}</span>:<span>${s}</span>`);
+                            }, 1000)
+                            //临界值检查
+                            function getNum(num) {
+                                if (num < 10) {
+                                    num = "0" + num;
+                                }
+                                return num;
+                            }
+                            return oPanic_time;
+                        }
+                        //轮播图
+                        sliderWithTop() {}
+                    }
+                    let test = new PanicManger(response);
+                    test.init();
+                    // test.countdownTime();
+                    resolve();
+                }
+            });
+        })
     })
 })

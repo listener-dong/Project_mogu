@@ -1,5 +1,7 @@
 (function ($) {
     $.extend({
-        getToggle() {}
+        getSliderTop(data) {
+
+        }
     })
 })(jQuery)

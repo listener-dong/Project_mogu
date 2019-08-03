@@ -616,3 +616,49 @@
   width: 130px;
   height: 130px;
 }
+
+#home #panic {
+  width: 100%;
+}
+
+#home #panic .countdown_slider {
+  widows: 100%;
+  height: 294px;
+}
+
+#home #panic .countdown_slider .countdown {
+  width: 230px;
+  height: 100%;
+  position: relative;
+  text-align: center;
+}
+
+#home #panic .countdown_slider .countdown img {
+  width: 100%;
+  display: block;
+}
+
+#home #panic .countdown_slider .countdown .time {
+  display: inline-block;
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 27px;
+  color: #333;
+  font-size: 24px;
+  line-height: 40px;
+}
+
+#home #panic .countdown_slider .countdown .time span {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  color: #eee;
+  font-size: 24px;
+  text-align: center;
+  line-height: 40px;
+  background: #333;
+  margin: 0 6px;
+}
