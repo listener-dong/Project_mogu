@@ -701,7 +701,7 @@
                     height: 100%;
                     margin: 0 20px;
                     box-sizing: border-box;
-                    // overflow: hidden;
+                    overflow: hidden;
                     position: relative;
 
                     .slider_goods {
@@ -738,10 +738,12 @@
                                 overflow: hidden;
                                 text-overflow: ellipsis;
                                 color: #666;
+                                margin: 14px 0 8px;
                             }
 
                             .price {
                                 height: 22px;
+                                letter-spacing: -1px;
 
                                 .original_price {
                                     // float: left;
@@ -751,7 +753,7 @@
                                 }
 
                                 .sale_price {
-                                    // float: right;
+                                    margin-left: 88px;
                                     font-size: 14px;
                                     line-height: 14px;
                                     color: #999;

@@ -700,6 +700,7 @@
   height: 100%;
   margin: 0 20px;
   box-sizing: border-box;
+  overflow: hidden;
   position: relative;
 }
 
@@ -737,10 +738,12 @@
   overflow: hidden;
   text-overflow: ellipsis;
   color: #666;
+  margin: 14px 0 8px;
 }
 
 #home #panic .countdown_slider .slider .slider_content .slider_goods .goods .price {
   height: 22px;
+  letter-spacing: -1px;
 }
 
 #home #panic .countdown_slider .slider .slider_content .slider_goods .goods .price .original_price {
@@ -750,6 +753,7 @@
 }
 
 #home #panic .countdown_slider .slider .slider_content .slider_goods .goods .price .sale_price {
+  margin-left: 88px;
   font-size: 14px;
   line-height: 14px;
   color: #999;

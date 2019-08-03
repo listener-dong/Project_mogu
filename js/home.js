@@ -226,11 +226,26 @@ $(function () {
                         constructor(data) {
                             this.data = data;
                             this.oPanic = null;
+                            this.slider_ul = null;
+                            this.slider_cont = null;
+                            this.oRight = null;
+                            this.timer = null;
+                            this.slider_jt = null;
                             // console.log(this.data);
+                            this.index = 0;
+                            this.liWith = 0;
+                            this.page = 0;
+                            this.times = 0;
                         }
                         //初始化
                         init() {
                             this.createHtml();
+                            this.autoPlayer();
+                            this.addMouse();
+                            this.clickDirection();
+                            this.index = this.data.length; //商品总数
+                            this.liWith = $(this.slider_ul).children().eq(0).innerWidth(); //每个商品的宽度
+                            this.page = (this.index / 4); //页码
                         }
                         //创建页面标签
                         createHtml() {
@@ -244,7 +259,9 @@ $(function () {
                             oLeft.append(this.countdownTime());
                             let oCountdown = $("<div></div>").addClass("countdown_slider");
                             oCountdown.append(oLeft);
-                            oCountdown.append(this.sliderWithTop()); //右侧轮播图导入
+                            this.sliderWithTop();
+                            console.log(this.oRight)
+                            oCountdown.append(this.oRight); //右侧轮播图导入
                             this.oPanic.append(oCountdown);
                         }
                         //创建下部标签
@@ -278,12 +295,63 @@ $(function () {
                             let slider_lis = this.data.map(ele => {
                                 return `<li class="goods"><div class="img"><img src=${ele.src}></div><p class="title">${ele.title}</p><p class="price"><span class="original_price">￥${ele.original_price}</span><del class="sale_price">￥${ele.sale_price}</del></p></li>`;
                             }).join("");
-                            let slider_jt = $("<div></div>").addClass("jiant").html("<span class='before'></span><span class='after'></span>");
-                            let slider_ul = `<ul class="slider_goods">${slider_lis}</ul>`;
-                            let slider_cont = $("<div></div>").addClass("slider_content").html(slider_ul);
-                            let oRight = $("<div></div>").addClass("slider");
-                            oRight.append(slider_jt).append(slider_cont);
-                            return oRight;
+                            this.slider_jt = $("<div></div>").addClass("jiant").html("<span class='before'></span><span class='after'></span>");
+                            // this.slider_ul = `<ul class="slider_goods">${slider_lis}</ul>`;
+                            this.slider_ul = $("<ul></ul>").addClass("slider_goods").html(slider_lis);
+                            this.slider_cont = $("<div></div>").addClass("slider_content").html(this.slider_ul);
+                            this.oRight = $("<div></div>").addClass("slider");
+                            this.oRight.append(this.slider_jt).append(this.slider_cont);
+                        }
+                        //背景图自动轮播
+                        autoPlayer() {
+                            //定时器
+                            this.timer = setInterval(() => {
+                                this.after();
+                            }, 2000);
+                        }
+                        //下一张
+                        after() {
+                            this.times++;
+                            //临界值检查，到最后一张后往第一张跳
+                            if (this.times > this.page - 1) {
+                                this.times = 0;
+                                this.slider_ul.css("left", -this.times * 920 + "px"); //跳动有问题
+                            }
+                            this.slider_ul.animate({
+                                left: -this.times * 920 + "px"
+                            });
+                        }
+                        上一张
+                        before() {
+                            this.times--;
+                            //临界值检查，到最后一张后往第一张跳
+                            if (this.times < 0) {
+                                this.times = this.page - 1
+                                this.slider_ul.css("left", -this.times * 920 + "px"); //跳动有问题
+                            }
+                            this.slider_ul.animate({
+                                left: -this.times * 920 + "px"
+                            });
+                        }
+                        //鼠标点击箭头上下切换
+                        clickDirection() {
+                            //拿到页面中上下张切换的标签
+                            this.slider_jt.on("click", (e) => {
+                                if (e.target.className == "before") {
+                                    this.before();
+                                } else if (e.target.className == "after") {
+                                    this.after();
+                                }
+                            })
+                        }
+                        //鼠标的移入移出事件
+                        addMouse() {
+                            this.oRight.on("mouseenter", () => {
+                                clearInterval(this.timer);
+                            })
+                            this.oRight.on("mouseleave", () => {
+                                this.autoPlayer();
+                            })
                         }
                     }
                     let test = new PanicManger(response);
