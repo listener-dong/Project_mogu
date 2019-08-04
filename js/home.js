@@ -254,7 +254,7 @@ $(function () {
             let oPanic_time = $("<div></div>").addClass("time");
             let times = setInterval(function () {
                 //结束时间
-                let endTime = new Date(2019, (8 - 1), 5, 0, 0);
+                let endTime = new Date(2019, (8 - 1), 10, 0, 0);
                 let nowTime = new Date();
                 let testTime = (endTime.getTime() - nowTime.getTime()) / 1000;
                 //时分秒
@@ -339,10 +339,12 @@ $(function () {
     }
     //女装模块class类
     class Clothes {
-        constructor(data, tit) {
+        constructor(title, data) {
             this.data = data;
-            this.tit = tit;
-            console.log(this.data, this.tit);
+            this.title = title;
+            // console.log(this.title, this.data);
+            this.oContent = null;
+            this.oClothes = null;
         }
         //初始化
         init() {
@@ -350,19 +352,59 @@ $(function () {
         }
         //创建页面标签
         createHtml() {
-            this.createHeaer();
-            this.createContent();
             this.oContent = $("<div class='content'></div>");
             this.oClothes = $("<div></div>").attr("id", "clothes").append(this.oContent);
             $("#home").append(this.oClothes);
+            this.createHeaer();
+            this.createContent();
         }
         //创建头部标签
         createHeaer() {
-            let oTitle = $("<div></div>").addClass("goods_titile");
-
+            let oTitle = $("<div></div>").addClass("goods_top").addClass("clear");
+            this.oContent.append(oTitle);
+            let title_tis = this.title.tis.map(ele => {
+                return `<li class="goods_tit_li">${ele}</li>`
+            }).join("");
+            oTitle.html(`<span class='color_block'></span><h2 class='goods_title'>${this.title.title}</h2><ul class='goods_tit_ul'>${title_tis}</ul>`);
         }
         //创建内容标签
-        createContent() {}
+        createContent() {
+            //商品楼层图内容区域标签
+            let oBottom = $("<div></div>").addClass("goods_content").addClass("clear");
+            //商品楼层左侧大图
+            let bigPhoto = $("<div></div>").addClass("big_photo").html(`<img src=${this.title.big_photo}>`);
+            //商品楼层右侧详情
+            let goodsDetails = $("<div></div>").addClass("goods_details");
+            //商品楼层右侧轮播图
+            let goodsSlider = this.createSlider();
+
+            //商品楼层右侧优惠背景
+            let goodsSale = $("<ul></ul>").addClass("goods_sale");
+            let sale_lis = this.title.bg_src.map(ele => {
+                return `<li class="sale_bg"><img src=${ele}></li>`;
+            }).join("");
+            goodsSale.html(sale_lis);
+            //商品楼层右侧商品分组
+            let goodsGroup = $("<ul></ul>").addClass("goods_group");
+            let group_lis = this.title.goods_group.map(ele => {
+                return `<li class="group_bg"><div class="text"><h3 class="g_title">${ele.g_title}</h3><p class="g_name">${ele.g_name}</p></div><img src=${ele.g_src}></li>`;
+            }).join("");
+            goodsGroup.append(group_lis);
+
+            goodsDetails.append(goodsSlider).append(goodsSale).append(goodsGroup);
+            oBottom.append(bigPhoto).append(goodsDetails);
+            this.oContent.append(oBottom);
+        }
+        //商品楼层右侧轮播图
+        createSlider() {
+            let html = this.data.map(ele => {
+                return `<li class="goods_list"><img src=${ele.src}><p class="goods_tit">${ele.title}</p><p class="goods_price">￥${ele.sale_price}</p></li>`;
+            }).join("");
+            // console.log(html);
+            let oJt = $("<div></div>").addClass("slider_jt").html("<span class='before'></span><span class='after'></span>");
+            let oUl = $("<div></div>").addClass("slider_ul").html(html);
+            return $("<div></div>").addClass("goods_slider").append(oUl).append(oJt);
+        }
     }
     //网络请求异步处理
     new Promise(function (resolve, reject) {
@@ -416,17 +458,17 @@ $(function () {
             data: "data",
             dataType: "json",
             success: function (response) {
-                let res = response;
+                let title = response;
                 $.ajax({
                     type: "get",
-                    url: "./server/copy.json",
+                    url: "./server/clothesGoods.json",
                     success: function (response) {
                         /* 模块化测试，测试失败 */
                         // require(["./js/clothes.js"], function () {
                         //     let test = new Clothes(res, response);
                         //     test.init();
                         // })
-                        let test = new Clothes(res, response);
+                        let test = new Clothes(title, response);
                         test.init();
                     }
                 });

@@ -1,6 +1,23 @@
 {
     "title": "女装",
     "tis": ["卫衣", "T恤 ", "连衣裙 ", " 牛仔外套 ", " 牛仔裤 ", "宽松毛衣"],
+    "big_photo": "https://s10.mogucdn.com/mlcdn/c45406/190507_0dkf3lb36d9k11h9ki2i6g63jhjji_690x1872.jpg_750x9999.v1c7E.81.webp",
     "bg_src": ["https://s10.mogucdn.com/mlcdn/c45406/190507_7759g7g4ij1jl9gk5hb6f3116k212_940x226.jpg_999x999.v1c0.81.webp", "https://s10.mogucdn.com/mlcdn/c45406/190220_070jbge5cae35i143e71l5jil1594_460x226.jpg_999x999.v1c0.81.webp", "https://s10.mogucdn.com/mlcdn/c45406/190220_0gb1bk2c4731geb35kl8453g9gbg3_460x226.jpg_999x999.v1c0.81.webp"],
-    "goods_src": ["https://s10.mogucdn.com/mlcdn/c45406/190220_3d6544f8533bged07lbgcbga5i4ka_375x375.jpg_180x180.v1cAC.40.webp", "https://s10.mogucdn.com/mlcdn/c45406/181031_11cb7d8k8hiik2d2g60fghbb02266_1125x1125.png_180x180.v1cAC.40.webp", "https://s10.mogucdn.com/mlcdn/c45406/190220_8b4dfj3dh8ej0g7g9329l5h15l0jk_375x413.png_180x180.v1cAC.40.webp", "https://s10.mogucdn.com/mlcdn/c45406/190220_136glli0e407c9173l5823lf2530k_375x375.jpg_180x180.v1cAC.40.webp"]
+    "goods_group": [{
+        "g_title": "时尚套装",
+        "g_name": "懒人穿搭 轻松搞定",
+        "g_src": "https://s10.mogucdn.com/mlcdn/c45406/190220_3d6544f8533bged07lbgcbga5i4ka_375x375.jpg_180x180.v1cAC.40.webp"
+    }, {
+        "g_title": "牛仔裤",
+        "g_name": "穿出你的大长腿",
+        "g_src": "https://s10.mogucdn.com/mlcdn/c45406/181031_11cb7d8k8hiik2d2g60fghbb02266_1125x1125.png_180x180.v1cAC.40.webp"
+    }, {
+        "g_title": "衬衫",
+        "g_name": "气质UP美翻天",
+        "g_src": "https://s10.mogucdn.com/mlcdn/c45406/190220_8b4dfj3dh8ej0g7g9329l5h15l0jk_375x413.png_180x180.v1cAC.40.webp"
+    }, {
+        "g_title": "显瘦裙装",
+        "g_name": "遮肉巧搭视觉显瘦",
+        "g_src": "https://s10.mogucdn.com/mlcdn/c45406/190220_136glli0e407c9173l5823lf2530k_375x375.jpg_180x180.v1cAC.40.webp"
+    }]
 }
