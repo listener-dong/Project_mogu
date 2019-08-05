@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function getYourString(s) {
+            var res = '';
+            var length = s.length;
+            for (var i = 0, j = 1; i < length; i++, j++) {
+                //每到达5次，添加一个换行标签
+                if (j && j % 6 == 0) {
+                    res += '<br />';
+                } else {
+                    res += s[i];
+                }
+            }
+            return res;
+        }
+        var test = '123456534545435435435';
+        document.write(getYourString(test));
+    </script>
+</body>
+
+</html>

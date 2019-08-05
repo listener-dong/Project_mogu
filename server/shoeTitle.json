@@ -1,0 +1,22 @@
+{
+    "title": "女鞋&包包",
+    "tis": ["凉鞋", "T凉鞋恤 ", "拖鞋 ", " 运动鞋 ", " 帆布鞋 "],
+    "big_photo": ["https://s10.mogucdn.com/mlcdn/c45406/180516_4cki65bidl5hbi40jg9529j2dkfb9_690x1665.jpg_750x9999.v1c7E.81.webp", "https://s10.mogucdn.com/mlcdn/c45406/180516_2dj56ekc3gkb16566gdahb1d3i996_690x1665.jpg_750x9999.v1c7E.81.webp"],
+    "hot": [{
+        "src": "https://s3.mogucdn.com/p2/uni/170902/3fx8zi_271b3847iacd624c9a7870db1hh1g_640x960.jpg_360x360.v1cAC.40.webp",
+        "name": "靴子女2018秋冬季新款系带原宿马丁靴女学生英伦风粗跟复古百搭加绒短靴",
+        "price": "79.00"
+    }, {
+        "src": "https://s11.mogucdn.com/mlcdn/c45406/181020_0hj7940l32gbbdh6lebcec4g4da62_640x960.jpg_360x360.v1cAC.40.webp",
+        "name": "蓓尔明星同款韩版夏季透气小白鞋新款女鞋子蝴蝶结包头半拖帆布鞋女学生百搭系带板鞋",
+        "price": "59.00"
+    }, {
+        "src": "https://s11.mogucdn.com/mlcdn/c45406/180528_30hdcjdakbhdk6eaaffib6blge81i_640x960.jpg_360x360.v1cAC.40.webp",
+        "name": "小包包仙女潮韩版百搭单肩斜挎包帆布ins超火honey蹦迪包",
+        "price": "66.50"
+    }, {
+        "src": "https://s11.mogucdn.com/mlcdn/c45406/171204_66lhg29h4l7d1g68kef8hj0fi09lh_640x960.jpg_360x360.v1cAC.40.webp",
+        "name": "显瘦腿弹力过膝长筒靴女鞋平底百搭秋冬季新款高跟加绒高筒靴子",
+        "price": "299.00"
+    }]
+}
