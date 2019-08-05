@@ -489,6 +489,7 @@ $(function () {
             this.createHtml();
             this.autoPlayer();
             this.clickNumber();
+            this.switchNum(0);
         }
         //创建页面表现
         createHtml() {
@@ -547,7 +548,6 @@ $(function () {
                     // `<ul class="slider_ul">${res}</ul>`
                     var ul = $("<ul></ul>").addClass("slider_ul").html(res);
                     this.oLen.append(ul);
-                    console.log(ul);
                     res = "";
                 }
             }
@@ -563,13 +563,12 @@ $(function () {
         //轮播图自动播放
         autoPlayer() {
             setInterval(() => {
-                // this.after()
+                this.after()
             }, 2000);
         }
         //下一张
         after() {
             this.times++;
-            // console.log(this.times++)
             if (this.times > this.oLen.children().length - 1) {
                 this.times = 0;
             }
@@ -603,7 +602,39 @@ $(function () {
             lis.eq(index).addClass("active").siblings().removeClass("active");
         }
     }
-
+    //wall商品class类
+    class ShopManger {
+        constructor(data) {
+            this.data = data;
+            this.oBox = null;
+            this.oContent = null;
+        }
+        //初始化
+        init() {
+            this.createHtml();
+            this.mouseShop();
+        }
+        //创建页面标签
+        createHtml() {
+            let html_shop = this.data.map(ele => {
+                let html_li = `<li class="shop-li"><img src=${ele.src}><p class="find">找相似</p><p class="name">${ele.title}</p><p class="price"><span class="class_a">￥${ele.sale_price}</span><del class="class_b">￥${ele.original_price}</del><img src="./images/upload_27g4f1ch6akie83hacb676j622b9l_32x30.png" class="icon"></p></li>`;
+                return html_li;
+            }).join("");
+            let title = $("<h3></h3>").addClass("wall_title").html("猜你喜欢");
+            this.oBox = $("<div></div>").attr("id", "wall");
+            let oUl = `<ul class="shop-content">${html_shop}</ul>`
+            this.oContent = $("<div></div>").addClass("content").append(title).append(oUl);
+            $(this.oBox).append(this.oContent);
+            $("#home").append(this.oBox);
+        }
+        //鼠标滑过商品事件
+        mouseShop() {
+            $(".shop-li").hover(function () {
+                $(this).find(".find").toggle();
+                $(this).toggleClass("mouse");
+            })
+        }
+    }
     //网络请求异步处理
     new Promise(function (resolve, reject) {
         //发送网络请求，banner-nav实例化对象
@@ -689,10 +720,26 @@ $(function () {
                         success: function (response) {
                             let test = new SameManger(title, response);
                             test.init();
+                            resolve();
                         }
                     });
                 }
             });
         })
+    }).then(function () {
+        return new Promise(function (resolve) {
+            $.ajax({
+                type: "get",
+                url: "./server/wallGoods.json",
+                dataType: "json",
+                success: function (response) {
+                    let test = new ShopManger(response);
+                    test.init();
+                    resolve();
+                }
+            });
+        })
+    }).then(function () {
+        $("#footer").appendTo("#home");
     })
 })
