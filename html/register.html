@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>注册</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/register.css">
+    <script src="../js/jquery-3.4.1.js"></script>
+    <script src="../js/captcha.js"></script>
+    <script src="../js/register.js"></script>
+</head>
+
+<body>
+    <div id="register">
+        <div id="header">
+            <div class="content">
+                <h2 class="logo"><img src="../images/logo_260x200.png" alt=""></h2>
+                <span class="informar">依《网络安全法》相关要求，即日起蘑菇街会员登陆需绑定手机。为保障您的账户安全及正常使用，如您尚未绑定，请尽快完成绑定，感谢您的理解和支持!</span>
+            </div>
+        </div>
+        <div id="main">
+            <div class="content">
+                <div class="user_register">
+                    <div class="nav">
+                        <div class="nav-item active">新用户注册</div>
+                        <div class="nav-item" style="display: none;">注册成功</div>
+                    </div>
+                    <div class="register_main">
+                        <!-- 用户名 -->
+                        <div class="users username">
+                            <span class="label">用户名</span>
+                            <div class="main_content">
+                                <input type="text" placeholder="请设置您的用户名(6~8位字母区分大小写)" id="usernameID">
+                                <span class="register_info">
+                                    正确的号码
+                                </span>
+                            </div>
+                        </div>
+                        <!-- 手机号 -->
+                        <div class="users phone">
+                            <span class="label">手机号码</span>
+                            <div class="main_content">
+                                <input type="text" placeholder="请输入您的手机号" id="phoneID">
+                                <span class="register_info"></span>
+                            </div>
+                        </div>
+                        <!-- 验证码 -->
+                        <div class="users verifica">
+                            <span class="label">验证码</span>
+                            <div class="main_content">
+                                <input type="text" placeholder="请输入图形验证码" id="imgCode">
+                                <canvas id="captcha"></canvas>
+                                <span class="register_info"></span>
+                            </div>
+                        </div>
+                        <!-- 短信验证码 -->
+                        <div class="users message">
+                            <span class="label">短信验证码</span>
+                            <div class="main_content">
+                                <input type="text" placeholder="请输入短信验证码" id="messageCode">
+                                <div class="btn_code"><button class="btn">获取短信验证码</button></div>
+                                <span class="register_info"></span>
+                            </div>
+                        </div>
+                        <!-- 设置密码 -->
+                        <div class="users password">
+                            <span class="label">设置密码</span>
+                            <div class="main_content">
+                                <input type="text" placeholder="密码长度6-16字符（区分大小写）" id="passwordA">
+                                <span class="register_info"></span>
+                            </div>
+                        </div>
+                        <!-- 确认密码 -->
+                        <div class="users confirm">
+                            <span class="label">确认密码</span>
+                            <div class="main_content">
+                                <input type="text" placeholder="密码请保持一致" id="passwordB">
+                                <span class="register_info"></span>
+                            </div>
+                        </div>
+                        <!-- 注册按钮 -->
+                        <div class="users btn">
+                            <span class="label"></span>
+                            <button class="register_btn">立即注册</button>
+                        </div>
+                        <!-- 协议 -->
+                        <div class="agree">
+                            <input name="protocol" id="protocol" type="checkbox">
+                            <label for="protocol" class="look">我已阅读并同意</label>
+                            <a href="http://www.jianke.com/help/trading.html" target="_blank"
+                                class="agree_info">《蘑菇街用户使用条款》</a>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer">
+                    <div class="content">
+                        <div class="footer_content">
+                            <ul class="footer_info">
+                                <li><a href="">关于我们</a></li>
+                                <li><a href="">招聘信息</a></li>
+                                <li><a href="">联系我们</a></li>
+                                <li><a href="">商家入驻</a></li>
+                                <li><a href="">商家后台</a></li>
+                                <li><a href="">商家社区</a></li>
+                                <li><a href="">规则中心</a></li>
+                                <li><a href="">规则众议院</a></li>
+                                <li><a href="">有害信息举报</a></li>
+                                <li><a href="">用户隐私保护</a></li>
+                            </ul>
+                            <div class="footer_name"><span>©2019 Mogu.com 杭州卷瓜网络有限公司</span></div>
+                            <div class="info">
+                                <p class="footer_in">营业执照：913301065526808764 | 增值电信业务经营许可证：浙B2-20110349 | 安全责任书 |</p>
+                                <p class="footer_in">浙公网安备 33010602010221号 | 互联网药品信息服务资格证书编号：（浙)-经营性-2018-0002 |
+                                    浙网食A33010003 |
+                                    出版物网络交易平台服务经营备案证 |
+                                    (浙)网械平台备字[2018]第00006号 |</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</body>
+
+</html>
