@@ -7,13 +7,13 @@
   width: 1200px;
   height: 100%;
   margin: 0 auto;
+  position: relative;
 }
 
 #login #header {
   height: 62px;
   background: #fff;
   padding: 20px 0;
-  position: relative;
 }
 
 #login #header .logo {

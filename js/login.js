@@ -63,6 +63,7 @@ $(function () {
                 $.ajax({
                     type: "post",
                     url: "../server/api/login.php",
+                    dataType: "json",
                     data: `username=${userName}&&password=${passWord}`,
                     // dataType: "dataType",
                     success: function (response) {

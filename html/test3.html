@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var s = $(".J_dynamic_img.fill_img");
+        var sn = [];
+        for (var i = 0; i < s.length; i++) {
+            sn.push(s.eq(i).attr("src"))
+        }
+
+        var t = $(".title.yahei.fl");
+        var tn = [];
+        for (var i = 0; i < t.length; i++) {
+            tn.push(t.eq(i).html())
+        }
+
+        var p = $(".price_info.yahei");
+        var pn = [];
+        for (var i = 0; i < p.length; i++) {
+            pn.push(p.eq(i).html().substr(1))
+        }
+
+        var o = $(".org_price.fl.yahei span");
+        var on = [];
+        for (var i = 0; i < o.length; i++) {
+            on.push(o.eq(i).html())
+        }
+
+        var arr = [];
+        for (var i = 0; i < sn.length; i++) {
+            var o = {};
+            o.src = sn[i];
+            o.title = tn[i];
+            o.sale = pn[i];
+            o.org = on[i];
+            arr.push(o);
+        }
+        arr = JSON.stringify(arr)
+        console.log();
+
+
+        var src = [
+            "https://s11.mogucdn.com/mlcdn/c45406/190703_6lc1k7…5b8khb4a8051cl2_640x960.jpg_440x587.v1cAC.40.webp",
+            "https://s11.mogucdn.com/mlcdn/c45406/190526_639564…b0dk759b065hcce_640x853.jpg_440x587.v1cAC.40.webp",
+            "https://s11.mogucdn.com/mlcdn/c45406/190718_2bhfjf…bk43aj44fae73hf_640x960.jpg_440x587.v1cAC.40.webp",
+            "https://s11.mogucdn.com/mlcdn/c45406/180705_4ebc7h…ici371b3k5f089c_640x960.jpg_440x587.v1cAC.40.webp",
+            "https://s11.mogucdn.com/mlcdn/c45406/190802_7fhhig…65fe38h2laej9k3_640x960.jpg_440x587.v1cAC.40.webp",
+            "https://s11.mogucdn.com/mlcdn/c45406/190726_096hjb…dc244eai8fjl7j7_640x960.jpg_440x587.v1cAC.40.webp",
+            "https://s11.mogucdn.com/mlcdn/c45406/190615_69hfe6…93jb5deb10c716b_640x850.jpg_440x587.v1cAC.40.webp",
+            "https://s11.mogucdn.com/mlcdn/c45406/190520_7578c3…dd151i6bkd185c2_640x960.jpg_440x587.v1cAC.40.webp",
+            "https://s11.mogucdn.com/mlcdn/c45406/190624_7d5fgj…4b268h9ef88i6l1_640x960.jpg_440x587.v1cAC.40.webp",
+            "https://s11.mogucdn.com/mlcdn/c45406/190802_6h4ecl…22k41fkj063046g_640x960.jpg_440x587.v1cAC.40.webp",
+            "https://s11.mogucdn.com/mlcdn/c45406/180420_15ekf9…ke0i0difj4i3ifj_640x960.jpg_440x587.v1cAC.40.webp",
+            "https://s11.mogucdn.com/mlcdn/c45406/190712_55ca53…fcj6ajlh1hl15g4_640x960.jpg_440x587.v1cAC.40.webp",
+            "https://s11.mogucdn.com/mlcdn/c45406/190506_0127lj…15k31ab9j49c378_640x960.jpg_440x587.v1cAC.40.webp",
+            "https://s11.mogucdn.com/mlcdn/c45406/190215_1b541b…j4d445gbllbhk86_640x960.jpg_440x587.v1cAC.40.webp",
+            "https://s11.mogucdn.com/mlcdn/55cf19/190330_4273lg…fkd4a69cid1321l_800x800.jpg_440x587.v1cAC.40.webp",
+            "https://s11.mogucdn.com/mlcdn/c45406/190413_7ljejc…738l1hk5965k4gd_640x960.jpg_440x587.v1cAC.40.webp",
+            "https://s11.mogucdn.com/mlcdn/c45406/181018_7135l2…4l3kkkgd6200490_640x960.jpg_440x587.v1cAC.40.webp",
+            "https://s11.mogucdn.com/mlcdn/c45406/190519_67gc9f…0ggdg1dc08f3ak2_640x960.jpg_440x587.v1cAC.40.webp",
+            "https://s11.mogucdn.com/mlcdn/c45406/190703_2269aj…08ejdke3fe5d7ia_640x960.jpg_440x587.v1cAC.40.webp",
+            "https://s11.mogucdn.com/mlcdn/c45406/190629_1h1586…6a7b9bhdbd62bde_640x960.jpg_440x587.v1cAC.40.webp",
+            "https://s11.mogucdn.com/mlcdn/c45406/190704_5fcl5k…k6l225lak3083b2_640x960.jpg_440x587.v1cAC.40.webp",
+            "https://s11.mogucdn.com/mlcdn/c45406/190716_0hli5b…b9cbf32kb43klag_640x960.jpg_440x587.v1cAC.40.webp",
+            "https://s11.mogucdn.com/mlcdn/c45406/180610_3kk51j…8d7fb1dkbb4gbe7_640x960.jpg_440x587.v1cAC.40.webp",
+            "https://s11.mogucdn.com/mlcdn/c45406/190620_4c3kd1…g5had1cb5i1dj41_640x960.jpg_440x587.v1cAC.40.webp",
+            "https://s11.mogucdn.com/mlcdn/c45406/190531_579141…76d3hj03bffbl5_800x1200.jpg_440x587.v1cAC.40.webp",
+            "https://s11.mogucdn.com/mlcdn/c45406/190425_5h92a6…e7lahk8605d04b8_640x960.jpg_440x587.v1cAC.40.webp",
+            "https://s11.mogucdn.com/mlcdn/c45406/190507_88f4b2…i5l25jbdkc5k60a_640x960.jpg_440x587.v1cAC.40.webp",
+            "https://s11.mogucdn.com/mlcdn/c45406/190524_311be0…207j333d1171gag_640x960.jpg_440x587.v1cAC.40.webp",
+            "https://s11.mogucdn.com/mlcdn/c45406/180603_817d8h…j297470b3214954_640x960.jpg_440x587.v1cAC.40.webp",
+            "https://s11.mogucdn.com/mlcdn/c45406/190416_4kffj1…9lg74k24gaj3j5b_640x960.jpg_440x587.v1cAC.40.webp",
+            "https://s11.mogucdn.com/mlcdn/55cf19/190602_897e5e…129ie1bg1fig3j0_640x960.jpg_440x587.v1cAC.40.webp",
+            "https://s11.mogucdn.com/mlcdn/c45406/190425_3ed5il…8gkd5dgjhgk8399_640x960.jpg_440x587.v1cAC.40.webp",
+            "https://s11.mogucdn.com/mlcdn/c45406/180627_49i00g…e1el826f73jjeh1_640x960.jpg_440x587.v1cAC.40.webp",
+            "https://s11.mogucdn.com/mlcdn/c45406/170427_8ef6fh…il5809dffc1de8c_640x960.jpg_440x587.v1cAC.40.webp",
+            "https://s11.mogucdn.com/mlcdn/c45406/190710_342hg5…4ckd22c7g2l6j5k_640x640.jpg_440x587.v1cAC.40.webp",
+            "https://s11.mogucdn.com/mlcdn/55cf19/190721_330d1f…770iad980313ee3_640x960.jpg_440x587.v1cAC.40.webp",
+            "https://s11.mogucdn.com/mlcdn/c45406/190721_0l23lc…e72956hif0bak5k_640x960.jpg_440x587.v1cAC.40.webp",
+            "https://s11.mogucdn.com/mlcdn/c45406/190414_1kbdh3…hg60dg6590c46e3_640x960.jpg_440x587.v1cAC.40.webp",
+            "https://s11.mogucdn.com/mlcdn/c45406/180503_6dhb0l…1659e75k4i9l89g_640x960.jpg_440x587.v1cAC.40.webp",
+            "https://s11.mogucdn.com/mlcdn/c45406/190426_039496…c5c3i85djg83ic7_800x800.jpg_440x587.v1cAC.40.webp",
+            "https://s11.mogucdn.com/mlcdn/c45406/180605_5j5h83…k1589k6f7f2g6e9_640x960.jpg_440x587.v1cAC.70.webp"
+        ]
+        var titile = ["牛油果绿V领短袖女T恤上衣夏季新款ins宽松体恤打底衫半袖潮", "定制2019夏新款宽松针织衫短长袖网洞上衣抽绳镂空V领罩衫",
+            "亲爱的热爱的杨紫佟年同款2019秋季新款白色中长款连帽卫衣女", "宽松显瘦气质黑色波点V领荷叶边衬衫夏季喇叭袖长袖雪纺衫上衣女", "夏季女装韩版原宿风bf中长款宽松百搭短袖T恤学生五分袖体恤衫",
+            "2019新款潮修身高腰露脐t恤女漏后背小心机短袖小款上衣短款", "宽松显瘦螺旋纹chic圆领薄款冰丝纯色简约百搭无袖针织衫上衣", "超火cec短袖t恤女夏韩版洋气ins潮丧系港风怪味百搭上衣服",
+            "夏锁骨心机显瘦上衣衬衣超仙女小众泡泡袖设计感短袖V领白衬衫女", "夏季新款短袖T恤女韩版潮学生ins原宿bf慵懒风宽松上衣女", "字母短袖T恤2019春夏新款韩版学院百搭印花圆领打底衫体恤女上衣",
+            "夏季新款韩版小清新荷叶边v领蕾丝上衣宽松短袖奶油杏色雪纺衫", "夏2019新款韩版纯色宽松短款洋气小衫学生网红短袖T恤女上衣",
+            "2019春装新款夏季韩版假两件拼接条纹T恤宽松时尚个性百搭短袖体恤女上衣夏装", "夏季港风宽松纯棉短袖女装韩版潮流印花T恤学生五分袖百搭上衣",
+            "送裹胸！春夏韩版纯色V领交叉收腰百搭显瘦小个子短袖上衣衬衫", "2019春季新款毛呢外套女中长款韩版雾霾蓝拼色大衣宽松加厚呢外套大衣女潮",
+            "夏季泫雅风彩色条纹外穿小吊带背心女修身百搭短款打底衫内搭上衣", "波点娃娃领雪纺衫女短袖2019新款韩版宽松甜美衬衫小衫上衣夏", "纯棉文艺短袖T恤女韩版宽松夏季新款潮流遮肚半袖上衣潮ins女",
+            "夏季新款韩版简约短袖宽松中长款下衣失踪T恤裙学生显瘦T恤女", "日系2019夏季新款工装马夹美式复古大口袋无袖上衣外穿背心",
+            "夏季2019新款韩版ulzzang宽松显瘦t恤女短袖上衣休闲开叉半袖体恤", "夏装宽松超火cec短袖t恤女装短款ins潮纯棉女士洋气上衣",
+            "明星范冰冰同款防晒衣夏季超薄透气情侣防晒服男女皮肤衣潮流外套", "雪纺衫女款夏季新款胖mm大码宽松遮肚喇叭袖甜美短袖超仙上衣", "微胖显瘦夏装上身胖女装短袖体桖闺蜜装丅小个子半袖半截袖t恤",
+            "夏季韩版宽松很仙的设计感小众短袖衬衫衬衣女2019复古上衣潮", "夏装新款韩版宽松ins超火的上衣条纹字母t恤潮冰丝针织短袖女", "原宿半袖仙鹤刺绣上衣女bf中长款圆领短袖T恤女宽松韩版学生潮",
+            "露肩上衣女短袖夏季新款韩版很仙的碎花雪纺衫宽松洋气小衫潮", "吊带露肩衬衫上衣女夏季韩版宽松短袖超仙甜美性感荷叶边雪纺衫女", "t恤女短袖韩版bf宽松超大款加肥加大码200斤中长款胖mm夏天上衣服",
+            "夏韩版小清新百搭宽松显瘦喇叭袖荷叶边套头短袖白色T恤上衣体恤", "韩版T恤女短袖2019夏装新款印花百搭宽松大码体恤上衣白色T", "短袖T恤女夏季新款韩版宽松大码200斤胖mm显瘦上衣印花体恤",
+            "假两件白色露肩T恤女夏2019新款韩版港风短袖设计感小众上衣", "春夏V领很仙的上衣洋气雪纺衫新款波点设计感心机小众衬衣女", "（送吊带）夏季新款韩版时尚百搭宽松大码小性感透视网纱雪纺衬衫",
+            "韩版T恤女短袖2019夏装新款印花百搭宽松大码体恤上衣白色T", "夏末秋初季装2018新款女复古冷淡风连衣裙显瘦拼接蕾丝裙T恤裙慵懒风裙子"
+        ];
+        var sale = ["39.9", "59", "98", "49", "39", "39.9", "45", "34.9", "59", "39", "49", "69", "23.9", "39.9", "59",
+            "59", "149.8", "19.9", "59", "59", "63", "69", "29.9", "49.9", "49", "49", "35", "39", "39.9", "49",
+            "49.9", "59.5", "29.9", "39.99", "25.9", "39.9", "59", "49", "49", "25.9", "79.8"
+        ]
+        var org = ["57", "84.29", "140", "70", "55.72", "57", "64.29", "58.17", "168", "55.72", "70", "98.58", "39.84",
+            "57", "84.3", "84.29", "214", "33.17", "84.29", "84.3", "90", "98.58", "49.84", "71.29", "70", "70",
+            "92", "64.84", "57", "70", "71.29", "85", "49.84", "57.13", "37", "57", "84.29", "70", "70", "37", "114"
+        ]
+        var arr = [];
+        for (var i = 0; i < org.length; i++) {
+            var o = {};
+            o.src = src[i];
+            o.titile = titile[i];
+            o.sale = sale[i];
+            o.org = org[i];
+            arr.push(o);
+        }
+        console.log(JSON.stringify(arr));
+    </script>
+</body>
+
+</html>
