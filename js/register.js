@@ -1,6 +1,15 @@
 $(function () {
+    /* 声明全局变量 */
+    let userName = ""; //用户名
+    let userPhone = ""; //手机号
+    let userPasswordA = ""; //密码A
+    let userPasswordB = ""; //密码B
+    let msgCode = ""; //输入框的短信验证码
+    let imgCodeText = "" //输入框图形验证码的值
+
     let imgCode = ""; //初始化图形验证码的值
-    /*  验证码处理 */
+
+    /*  图形验证码处理 */
     (new Captcha({
         fontSize: 80,
         lineNum: 20,
@@ -8,8 +17,12 @@ $(function () {
         dotNum: 30
     })).draw($("#captcha")[0], text => {
         imgCode = text;
-        // console.log(text, "验证码");
+        /* 自动触发失去焦点事件 */
+        $("#imgCode").trigger("blur");
     })
+
+    let msgCodeText = ""; //生成的短信验证码
+
     /* 正则表达式 */
     let regUsername = /^[A-Za-z\d]{6,10}$/;
     let regPhone = /^1[3-9]\d{9}$/;
@@ -17,16 +30,18 @@ $(function () {
     /* 监听用户名输入框失去焦点事件 */
     $("#usernameID").blur(function (e) {
         let text = $.trim($(this).val());
+        userName = text;
         e.preventDefault(); //阻止事件默认动作
+        // let b = $(this).next().addClass("info_show");
+        // console.log(b)
         if (text.length == 0) {
-            $(this).next().html("用户名不能为空！");
+            $(this).next().addClass("info_show").html("用户名不能为空！");
         } else if (!regUsername.test(text)) {
-            $(this).next().html("请输入正确的用户名格式！");
+            $(this).next().addClass("info_show").html("请输入正确的用户名格式！");
         } else {
-            $(this).next().html("");
+            $(this).next().removeClass("info_show");
         }
     });
-
     /* 短信验证码方法 */
     function formatterDateTime() {
         var date = new Date()
@@ -50,7 +65,7 @@ $(function () {
                 .getSeconds());
         return datetime;
     }
-    let msgCodeText = "";
+
     /* 给发送短信按钮添加点击事件 */
     $(".btn_msm").click(function () {
         msgCodeText = parseInt(Math.random() * 1000000);
@@ -99,65 +114,104 @@ $(function () {
     /* 监听短信验证码输入框失去焦点事件 */
     $("#messageCode").blur(function (e) {
         let text = $(this).val();
-        console.log(text)
+        msgCode = text;
         e.preventDefault();
         if (text.length == 0) {
-            $(this).siblings(".register_info").html("短信验证码不能为空！");
+            $(this).siblings(".register_info").addClass("info_show").html("短信验证码不能为空！");
         } else if (text != msgCodeText) {
-            $(this).siblings(".register_info").html("短信验证码输入错误！");
+            $(this).siblings(".register_info").addClass("info_show").html("短信验证码输入错误！");
         } else {
-            $(this).siblings(".register_info").html("");
+            $(this).siblings(".register_info").removeClass("info_show");
         }
     })
 
     /* 监听手机号输入框失去焦点事件 */
     $("#phoneID").blur(function (e) {
         let text = $.trim($(this).val());
+        userPhone = text;
         e.preventDefault(); //阻止事件默认动作
         if (text.length == 0) {
-            $(this).next().html("手机号不能为空！");
+            $(this).next().addClass("info_show").html("手机号不能为空！");
         } else if (!regPhone.test(text)) {
-            $(this).next().html("请输入正确的手机号码！");
+            $(this).next().addClass("info_show").html("请输入正确的手机号码！");
         } else {
-            $(this).next().html("");
+            $(this).next().removeClass("info_show");
         }
     });
     /* 监听验证码输入框失去焦点事件 */
     $("#imgCode").blur(function (e) {
         let text = $(this).val().toLowerCase();
         imgCode = imgCode.toLowerCase();
+        imgCodeText = text;
         e.preventDefault();
         if (text.length == 0) {
-            $(this).siblings(".register_info").html("验证码不能为空！");
+            $(this).siblings(".register_info").addClass("info_show").html("验证码不能为空！");
         } else if (text != imgCode) {
-            $(this).siblings(".register_info").html("验证码输入错误！");
+            $(this).siblings(".register_info").addClass("info_show").html("验证码输入错误！");
         } else {
-            $(this).siblings(".register_info").html("");
+            $(this).siblings(".register_info").removeClass("info_show");
         }
     })
     /* 监听密码输入框失去焦点事件 */
     $("#passwordA").blur(function (e) {
         let text = $.trim($(this).val());
+        userPasswordA = text;
         e.preventDefault(); //阻止事件默认动作
         if (text.length == 0) {
-            $(this).next().html("密码不能为空！");
+            $(this).next().addClass("info_show").html("密码不能为空！");
         } else if (!regPassword.test(text)) {
-            $(this).next().html("请输入正确格式的密码！");
+            $(this).next().addClass("info_show").html("请输入正确格式的密码！");
         } else {
-            $(this).next().html("");
+            $(this).next().removeClass("info_show");
         }
     });
     /* 监听确认密码输入框失去焦点事件 */
     $("#passwordB").blur(function (e) {
-        let textA = $.trim($("#passwordA").val());
+        let textA = userPasswordA;
         let textB = $.trim($(this).val());
+        userPasswordB = textB;
         e.preventDefault(); //阻止事件默认动作
         if (textB.length == 0) {
-            $(this).next().html("密码不能为空！");
+            $(this).next().addClass("info_show").html("密码不能为空！");
         } else if (textA != textB) {
-            $(this).next().html("两次输入的密码不一致！");
+            $(this).next().addClass("info_show").html("两次输入的密码不一致！");
         } else {
-            $(this).next().html("");
+            $(this).next().removeClass("info_show");
         }
     });
+    /* 点击注册按钮事件 */
+    // (1)先获取标签绑定点击事件
+    $(".register_btn").click(function () {
+        // location.href = "../home.html";
+        //复选框是否勾选
+        let ischecked = $("#protocol").is(":checked");
+        if (!ischecked) {
+            alert("请阅读并同意用户协议！");
+            return;
+        }
+        userName = "chenxudong";
+        userPhone = 13502525477;
+        imgCodeText = "abcd";
+        msgCode = "3333";
+        userPasswordA = 1234567;
+        userPasswordB = 1234567;
+        /* 判断输入框内容不为空且不提示警告信息 */
+        if (userName.length != 0 && userPhone.length != 0 && imgCodeText.length != 0 && msgCode.length != 0 && userPasswordA.length != 0 && userPasswordB.length != 0 && $(".info_show").length == 0) {
+            $.ajax({
+                type: "post",
+                url: "../server/api/register.php",
+                dataType: "json",
+                data: `username=${userName}&userphone=${userPhone}&password=${userPasswordA}`,
+                success: function (response) {
+                    /* 判断请求是否成功 */
+                    if (response.status == "success") {
+                        alert(response.msg);
+                        window.location.href = "./login.html";
+                    } else {
+                        alert(response.msg);
+                    }
+                }
+            });
+        }
+    })
 })

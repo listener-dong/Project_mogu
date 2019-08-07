@@ -1,5 +1,6 @@
 #register {
   height: 100%;
+  min-width: 1200px;
 }
 
 #register .content {
@@ -118,6 +119,11 @@
   left: 12px;
   color: #dd032b;
   font-weight: bold;
+  display: none;
+}
+
+#register #main .user_register .register_main .users .main_content .info_show {
+  display: block;
 }
 
 #register #main .user_register .register_main .btn .register_btn {
