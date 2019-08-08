@@ -1,0 +1,330 @@
+.content {
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.clear::after {
+  content: "";
+  height: 0;
+  display: block;
+  overflow: hidden;
+  clear: both;
+  visibility: hidden;
+}
+
+#details {
+  min-width: 1200px;
+  width: 100%;
+}
+
+#details #banner {
+  width: 100%;
+  height: 150px;
+}
+
+#details #banner .bg {
+  height: 100%;
+  background-image: url(../images/180819_6lgfg225dh4kekkl432bg1d6bej2b_1920x150.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+#details #nav {
+  width: 100%;
+}
+
+#details #nav .nav_l {
+  background: #000;
+  opacity: .7;
+}
+
+#details #nav .nav_l .lis {
+  float: left;
+  padding: 5px 0;
+}
+
+#details #nav .nav_l .lis a {
+  font-size: 14px;
+  line-height: 20px;
+  padding: 0 17px;
+  color: #fff;
+  border-right: 1px solid #5c5c5c;
+}
+
+#details #nav .nav_l .lis:last-child a {
+  border-right: none;
+}
+
+#details #main {
+  margin-top: 30px;
+  height: 690px;
+}
+
+#details #main .left_m {
+  float: left;
+  width: 400px;
+  height: 669px;
+}
+
+#details #main .left_m .big {
+  width: 400px;
+  height: 600px;
+  overflow: hidden;
+}
+
+#details #main .left_m .big .big_photo {
+  width: 2000px;
+  height: 100%;
+}
+
+#details #main .left_m .big .big_photo .li_photo {
+  width: 400px;
+  height: 100%;
+  float: left;
+}
+
+#details #main .left_m .small {
+  margin-top: 10px;
+  text-align: center;
+}
+
+#details #main .left_m .small .small_photo {
+  display: inline-block;
+}
+
+#details #main .left_m .small .small_photo .lis {
+  float: left;
+  width: 60px;
+  height: 60px;
+  background: #ccc;
+  position: relative;
+  margin-right: 10px;
+  overflow: hidden;
+}
+
+#details #main .left_m .small .small_photo .lis img {
+  width: 100%;
+  display: block;
+}
+
+#details #main .left_m .small .small_photo .lis p {
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  background: #ef2f23;
+  display: none;
+}
+
+#details #main .center_m {
+  float: left;
+  margin-left: 20px;
+  width: 540px;
+  font-size: 12px;
+  position: relative;
+}
+
+#details #main .center_m .title {
+  font-size: 24px;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#details #main .center_m .info_n {
+  color: #999;
+  position: absolute;
+  left: 10px;
+}
+
+#details #main .center_m .info {
+  background: #f6f6f6;
+}
+
+#details #main .center_m .info .org {
+  line-height: 32px;
+}
+
+#details #main .center_m .info .org .org_i {
+  color: #999;
+  padding-left: 60px;
+}
+
+#details #main .center_m .info .sale {
+  line-height: 32px;
+}
+
+#details #main .center_m .info .sale .sale_i {
+  padding-left: 60px;
+  font-size: 24px;
+  color: #ef2f23;
+  line-height: 32px;
+  font-weight: bold;
+}
+
+#details #main .center_m .info .offer {
+  line-height: 32px;
+  height: 32px;
+}
+
+#details #main .center_m .sever {
+  line-height: 32px;
+  height: 32px;
+  margin-top: 14px;
+}
+
+#details #main .center_m .sever .gif {
+  display: inline-block;
+  width: 85px;
+  height: 24px;
+  background-image: url(../images/sp1ku_ieygin3dgeydoztbmiytambqmeyde_16x17.gif);
+  margin: 4px 0;
+  margin-left: 60px;
+}
+
+#details #main .center_m .gobuy .color {
+  line-height: 32px;
+  margin-top: 10px;
+}
+
+#details #main .center_m .gobuy .color .cen_photo {
+  padding-left: 60px;
+}
+
+#details #main .center_m .gobuy .color .cen_photo .tip {
+  width: 43px;
+  height: 43px;
+  border: 1px solid #ddd;
+  margin-right: 10px;
+  float: left;
+  overflow: hidden;
+}
+
+#details #main .center_m .gobuy .color .cen_photo .tip img {
+  width: 100%;
+  display: block;
+}
+
+#details #main .center_m .gobuy .size {
+  line-height: 32px;
+  margin-top: 16px;
+}
+
+#details #main .center_m .gobuy .size .size_c {
+  padding-left: 60px;
+}
+
+#details #main .center_m .gobuy .size .size_c .si {
+  margin-right: 10px;
+  float: left;
+  padding: 0 10px;
+  font-weight: 700;
+  line-height: 28px;
+  border: 1px solid #ddd;
+}
+
+#details #main .center_m .gobuy .num {
+  padding-left: 60px;
+  margin: 18px 0;
+}
+
+#details #main .center_m .gobuy .num .number {
+  width: 104px;
+  border: 1px solid #ddd;
+}
+
+#details #main .center_m .gobuy .num .number .val {
+  width: 46px;
+  line-height: 23px;
+  text-align: center;
+}
+
+#details #main .center_m .gobuy .num .number span {
+  width: 24px;
+  height: 25px;
+  display: inline-block;
+  text-align: center;
+  line-height: 23px;
+}
+
+#details #main .center_m .gobuy .num .number .push {
+  border-right: 1px solid #ddd;
+}
+
+#details #main .center_m .gobuy .num .number .less {
+  border-left: 1px solid #ddd;
+}
+
+#details #main .center_m .gobuy .btns .buy {
+  width: 200px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 20px;
+  color: #fff;
+  background: #ef2f23;
+}
+
+#details #main .center_m .gobuy .btns .car {
+  width: 200px;
+  height: 50px;
+  border: 1px solid #ddd;
+  background: #fff;
+  text-align: center;
+  font-size: 20px;
+  line-height: 50px;
+  color: #333;
+  margin-left: 10px;
+}
+
+#details #main .center_m .gobuy .severshow {
+  line-height: 32px;
+  padding-left: 70px;
+}
+
+#details #main .center_m .gobuy .severshow .ut {
+  margin-top: 20px;
+}
+
+#details #main .center_m .gobuy .severshow .ut .uts {
+  float: left;
+  font-size: 12px;
+  color: #666;
+  margin-right: 10px;
+}
+
+#details #main .center_m .gobuy .severshow .ut .uts img {
+  width: 24px;
+  height: 24px;
+  margin-right: 4px;
+}
+
+#details #main .center_m .gobuy .money {
+  line-height: 32px;
+  height: 32px;
+  padding-left: 70px;
+}
+
+#details #main .center_m .gobuy .money .money_bg {
+  display: inline-block;
+  margin-top: 6px;
+  width: 47px;
+  height: 20px;
+  background-image: url(../images/117603130_6a8jgjh899bh5jd6hcia3ehhj0113_221x704.png);
+  background-position: -38px -295px;
+}
+
+#details #main .right_m {
+  float: right;
+  height: 100%;
+  width: 120px;
+  padding-left: 20px;
+  border-left: 1px dashed #999;
+  background: pink;
+}
+
+#details #main .right_m .r_title {
+  font-size: 16px;
+  color: #999;
+}
