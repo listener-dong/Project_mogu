@@ -93,11 +93,12 @@ $(function () {
         init() {
             this.createHtml();
             this.mouseShop();
+            this.clickWithli();
         }
         //创建页面标签
         createHtml() {
-            let lis = this.data.map((ele) => {
-                let html_li = `<li class="shop-li"><img src=${ele.src}><p class="find">找相似</p><p class="name">${ele.title}</p><p class="price"><span class="class_a">￥${ele.sale}</span><span class="class_b">￥${ele.org}</span><img src="../images/upload_27g4f1ch6akie83hacb676j622b9l_32x30.png" class="icon"></p></li>`;
+            let lis = this.data.map((ele, i) => {
+                let html_li = `<li class="shop-li" data-index=${i+1}><img src=${ele.src}><p class="find">找相似</p><p class="name">${ele.title}</p><p class="price"><span class="class_a">￥${ele.sale}</span><span class="class_b">￥${ele.org}</span><img src="../images/upload_27g4f1ch6akie83hacb676j622b9l_32x30.png" class="icon"></p></li>`;
                 return html_li;
             }).join("");
             let html_shop = `<ul class="shop-content">${lis}</ul>`
@@ -110,6 +111,14 @@ $(function () {
             $(".shop-li").hover(function () {
                 $(this).find(".find").toggle();
                 $(this).toggleClass("mouse");
+            })
+        }
+        //鼠标点击商品事件
+        clickWithli() {
+            $(".shop-li").click(function () {
+                // console.log($(this).data("index"));
+                window.open("../html/detailspage.html");
+                /* 发送网络请求，把点击的数据插入到一个新的表中 */
             })
         }
     }
@@ -126,10 +135,10 @@ $(function () {
     //发送网络请求
     $.ajax({
         type: "get",
-        url: "../server/wall/wallData0.json",
-        data: "data",
+        url: "../server/getwallData0.php",
         dataType: "json",
         success: function (response) {
+            console.log(response);
             let test = new ShopManger(response);
             test.init();
         }
