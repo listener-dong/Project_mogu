@@ -655,7 +655,6 @@ $(function () {
                 url: "./server/bannerPhoto.json",
                 dataType: "json",
                 success: function (response) {
-
                     let test = new BannerSlider(response);
                     test.init();
                     resolve();

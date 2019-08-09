@@ -1,0 +1,181 @@
+.content {
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.clear::after {
+    content: "";
+    height: 0;
+    display: block;
+    overflow: hidden;
+    clear: both;
+    visibility: hidden;
+}
+
+#cart {
+    width: 100%;
+    min-width: 1200px;
+
+    #main {
+        margin-top: 30px;
+
+        .title {
+            display: inline-block;
+            font-size: 20px;
+            line-height: 28px;
+            color: #f57;
+            border-bottom: 3px solid #f57;
+            padding: 6px 0;
+        }
+
+        .cart_content {
+            width: 100%;
+            // border-spacing: 0px;
+            // border-collapse: collapse;
+            border: 1px solid #ddd;
+
+            thead {
+                width: 100%;
+
+
+                tr {
+                    border: 1px solid red;
+                    background-color: #f6f6f6;
+                    border-spacing: 5px;
+
+                    th {
+                        box-sizing: border-box;
+                        padding: 15px 0;
+                        font-size: 12px;
+                        font-weight: normal;
+                        color: #333;
+                        line-height: 20px;
+                        border: 1px solid #ddd;
+                    }
+
+                    th:nth-child(2) {
+                        width: 500px;
+                        text-align: left;
+                        text-indent: 40px;
+                    }
+
+                    th:nth-child(4) {
+                        width: 200px;
+                    }
+
+                    th:last-child {
+                        width: 150px;
+                    }
+                }
+            }
+
+            tbody {
+                width: 100%;
+                font-size: 12px;
+                text-align: center;
+                color: #666;
+
+                tr {
+                    height: 100px;
+                    margin-top: 20px;
+                    height: 150px;
+                    // border: 1px solid #ddd;
+
+                    td {
+                        img {
+                            width: 80px;
+                            display: block;
+                        }
+                    }
+
+                    td:nth-child(2) {
+                        padding-left: 10px;
+
+                        img {
+                            float: left;
+                        }
+
+                        p {
+                            text-align: left;
+                            float: left;
+                            width: 360px;
+                            margin-left: 20px;
+                        }
+                    }
+                }
+
+                .number {
+                    display: inline-block;
+                    text-align: center;
+                    width: 104px;
+                    border: 1px solid #ddd;
+
+                    .val {
+                        width: 46px;
+                        line-height: 23px;
+                        text-align: center;
+                    }
+
+                    span {
+                        width: 24px;
+                        height: 25px;
+                        display: inline-block;
+                        text-align: center;
+                        line-height: 23px;
+                    }
+
+                    .push {
+                        border-left: 1px solid #ddd;
+                        cursor: pointer;
+                    }
+
+                    .less {
+                        border-right: 1px solid #ddd;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+
+        .table_footer {
+            margin-top: 30px;
+            width: 100%;
+            border: 1px solid #ddd;
+
+            .info {
+                float: right;
+
+                .money {
+                    float: left;
+                    font-size: 12px;
+                    line-height: 50px;
+                    height: 50px;
+                    margin-right: 20px;
+                    color: #333;
+
+                    .choose {
+                        color: #f57;
+                    }
+
+                    .total {
+                        color: #f57;
+                        font-size: 26px;
+                        line-height: 50px;
+                        font-weight: bold;
+                    }
+                }
+
+                .mbtn {
+                    float: left;
+                    width: 152px;
+                    background: #f13e3a;
+                    color: #fff;
+                    height: 50px;
+                    text-align: center;
+                    line-height: 50px;
+                }
+            }
+        }
+    }
+}

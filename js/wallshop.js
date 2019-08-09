@@ -116,9 +116,10 @@ $(function () {
         //鼠标点击商品事件
         clickWithli() {
             $(".shop-li").click(function () {
-                // console.log($(this).data("index"));
+                let index = $(this).data("index");
+                /* 将当前商品的数据ID存储到cookie当中 */
+                Cookie.setItem("shopid", index);
                 window.open("../html/detailspage.html");
-                /* 发送网络请求，把点击的数据插入到一个新的表中 */
             })
         }
     }

@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../css/footer.css">
     <script src="../js/jquery-3.4.1.js"></script>
     <script src="../js/include.js"></script>
+    <script src="../js/cookie.js"></script>
     <script src="../js/detailspage.js"></script>
 </head>
 
@@ -89,9 +90,10 @@
                         </div>
                         <div class="num"><span class="info_n">数量:</span>
                             <div class="number">
-                                <span class="push">+</span>
+                                <span class="less">-</span>
                                 <input type="text" class="val">
-                                <span class="less">-</span></div>
+                                <span class="push">+</span>
+                            </div>
                         </div>
                         <div class="btns">
                             <button class="buy">立刻购买</button>
@@ -116,9 +118,25 @@
                 </div>
                 <div class="right_m">
                     <p class="r_title">热卖推荐</p>
-                    <ul class="hot"></ul>
+                    <ul class="hot">
+                        <li class="hot_li">
+                            <img src="../images/hot1.jpg" alt="">
+                            <p>￥75</p>
+                        </li>
+                        <li class="hot_li">
+                            <img src="../images/hot2.jpg" alt="">
+                            <p>￥35</p>
+                        </li>
+                        <li class="hot_li">
+                            <img src="../images/hot3.jpg" alt="">
+                            <p>￥88</p>
+                        </li>
+                    </ul>
                 </div>
             </div>
+        </div>
+        <div id="legend">
+            <div class="content"><img src="../images/详情页内容.png"></div>
         </div>
         <div id="footer">
             <include src="./footer.html"></include>
