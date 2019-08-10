@@ -120,6 +120,11 @@
                         padding: 20px;
                         box-sizing: border-box;
                         border-left: 1px dashed #ccc;
+
+                        img {
+                            width: 200px;
+                            display: block;
+                        }
                     }
                 }
 

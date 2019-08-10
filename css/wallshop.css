@@ -125,6 +125,11 @@
   border-left: 1px dashed #ccc;
 }
 
+#wallshop #shopmain .shopnav .body .content-body .right img {
+  width: 200px;
+  display: block;
+}
+
 #wallshop #shopmain .shopnav .body .show {
   display: block;
 }

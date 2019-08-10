@@ -103,6 +103,10 @@
   margin-left: 20px;
 }
 
+#cart #main .cart_content tbody tr .remove {
+  cursor: pointer;
+}
+
 #cart #main .cart_content tbody .number {
   display: inline-block;
   text-align: center;
