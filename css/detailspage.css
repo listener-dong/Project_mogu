@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .content {
   width: 1200px;
   height: 100%;
@@ -61,39 +62,76 @@
   height: 690px;
 }
 
-#details #main .left_m {
+#details #main #left_m {
   float: left;
   width: 400px;
   height: 669px;
+  position: relative;
+  /* 修改的部分 */
 }
 
-#details #main .left_m .big {
+#details #main #left_m #l_box {
   width: 400px;
   height: 600px;
-  overflow: hidden;
+  position: relative;
+  z-index: 1;
 }
 
-#details #main .left_m .big .big_photo {
-  width: 2000px;
-  height: 100%;
-}
-
-#details #main .left_m .big .big_photo .li_photo {
+#details #main #left_m #l_box img {
   width: 400px;
-  height: 100%;
-  float: left;
 }
 
-#details #main .left_m .small {
+#details #main #left_m #l_box #mask {
+  position: absolute;
+  position: block;
+  width: 400px;
+  height: 600px;
+  background: #FFFFFF;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  z-index: 10;
+}
+
+#details #main #left_m #l_box #rectangle {
+  display: none;
+  width: 160px;
+  height: 120px;
+  position: absolute;
+  background: #FFFFCC;
+  border: 1px solid #CCCCCC;
+  filter: alpha(opacity=50);
+  opacity: 0.5;
+}
+
+#details #main #left_m #r_box {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 460px;
+  width: 400px;
+  height: 500px;
+  overflow: hidden;
+  border: 1px solid #CCCCCC;
+  z-index: 3;
+  background: #333;
+}
+
+#details #main #left_m #r_box img {
+  position: absolute;
+  z-index: 5;
+  width: 200%;
+}
+
+#details #main #left_m .small {
   margin-top: 10px;
   text-align: center;
 }
 
-#details #main .left_m .small .small_photo {
+#details #main #left_m .small .small_photo {
   display: inline-block;
 }
 
-#details #main .left_m .small .small_photo .lis {
+#details #main #left_m .small .small_photo .lis {
   float: left;
   width: 60px;
   height: 60px;
@@ -103,12 +141,12 @@
   overflow: hidden;
 }
 
-#details #main .left_m .small .small_photo .lis img {
+#details #main #left_m .small .small_photo .lis img {
   width: 100%;
   display: block;
 }
 
-#details #main .left_m .small .small_photo .lis p {
+#details #main #left_m .small .small_photo .lis p {
   width: 100%;
   height: 2px;
   position: absolute;

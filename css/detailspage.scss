@@ -59,26 +59,65 @@
         margin-top: 30px;
         height: 690px;
 
-        .left_m {
+        #left_m {
             float: left;
             width: 400px;
             height: 669px;
+            position: relative;
 
-            .big {
+            /* 修改的部分 */
+            #l_box {
                 width: 400px;
                 height: 600px;
-                overflow: hidden;
+                position: relative;
+                z-index: 1;
 
-                .big_photo {
-                    width: 2000px;
-                    height: 100%;
-
-                    .li_photo {
-                        width: 400px;
-                        height: 100%;
-                        float: left;
-                    }
+                // overflow: hidden;
+                img {
+                    width: 400px;
                 }
+
+                #mask {
+                    position: absolute;
+                    position: block;
+                    width: 400px;
+                    height: 600px;
+                    background: #FFFFFF;
+                    filter: alpha(opacity=0);
+                    opacity: 0;
+                    z-index: 10;
+
+                }
+
+                #rectangle {
+                    display: none;
+                    width: 160px;
+                    height: 120px;
+                    position: absolute;
+                    background: #FFFFCC;
+                    border: 1px solid #CCCCCC;
+                    filter: alpha(opacity=50);
+                    opacity: 0.5;
+                }
+            }
+
+            #r_box {
+                display: none;
+                position: absolute;
+                top: 0;
+                left: 460px;
+                width: 400px;
+                height: 500px;
+                overflow: hidden;
+                border: 1px solid #CCCCCC;
+                z-index: 3;
+                background: #333;
+            }
+
+            #r_box img {
+                position: absolute;
+                z-index: 5;
+                width: 200%;
             }
 
             .small {
