@@ -3,6 +3,20 @@ $(function () {
     $(".about").hover(function () {
         $(".about_content").toggleClass("show_about");
     });
+    //给标题搜索框添加吸顶效果
+    $(document).scroll(function () { //页面加载时，获取滚动条初始高度
+        var distance = $(document).scrollTop(); //获取滚动条初始高度的值 ：0
+        if (distance >= 600) { //当滚动条高度为0时
+            $("#ceiling").css("display", "block");
+        } else if (distance < 600) {
+            $("#ceiling").css("display", "none");
+        }
+    });
+    //给登陆添加点击跳转到登陆页面
+    $(".login").click(function () {
+        window.location.href = "./html/login.html";
+    });
+
     //创建Banner导航栏class类
     class BannerNav {
         constructor(data) {

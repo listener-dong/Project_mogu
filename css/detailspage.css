@@ -72,9 +72,10 @@
 
 #details #main #left_m #l_box {
   width: 400px;
-  height: 600px;
+  height: 500px;
   position: relative;
   z-index: 1;
+  overflow: hidden;
 }
 
 #details #main #left_m #l_box img {
@@ -85,7 +86,7 @@
   position: absolute;
   position: block;
   width: 400px;
-  height: 600px;
+  height: 500px;
   background: #FFFFFF;
   filter: alpha(opacity=0);
   opacity: 0;

@@ -1,4 +1,8 @@
 $(function () {
+    //给注册按钮添加点击跳转
+    $(".reg").click(function () {
+        window.location.href = "./register.html";
+    });
     //创建login的class类
     class LoginManger {
         constructor() {
@@ -59,15 +63,18 @@ $(function () {
             })
             //登陆按钮添加点击事件
             $(this.oBtn).click(function () {
-                // console.log(userName, passWord);
                 $.ajax({
                     type: "post",
                     url: "../server/api/login.php",
                     dataType: "json",
                     data: `username=${userName}&&password=${passWord}`,
-                    // dataType: "dataType",
                     success: function (response) {
                         console.log(response);
+                        let status = response.status;
+                        console.log(status);
+                        if (status == "success") {
+                            alert("登陆成功！")
+                        }
                     }
                 });
             })

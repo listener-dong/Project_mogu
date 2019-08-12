@@ -68,11 +68,11 @@
             /* 修改的部分 */
             #l_box {
                 width: 400px;
-                height: 600px;
+                height: 500px;
                 position: relative;
                 z-index: 1;
+                overflow: hidden;
 
-                // overflow: hidden;
                 img {
                     width: 400px;
                 }
@@ -81,7 +81,7 @@
                     position: absolute;
                     position: block;
                     width: 400px;
-                    height: 600px;
+                    height: 500px;
                     background: #FFFFFF;
                     filter: alpha(opacity=0);
                     opacity: 0;

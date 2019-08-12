@@ -84,13 +84,15 @@ $(function () {
             test.init();
         }
     });
-
+    /* 放大镜功能 */
+    // 1.获取页面标签
     var box = document.getElementById("left_m");
     var mask = document.getElementById("mask");
-    var l_box = document.getElementById("l_box");
     var r_box = document.getElementById("r_box");
     var rectangle = document.getElementById("rectangle");
     var pic = r_box.getElementsByTagName('img')[0];
+
+    //给遮罩添加鼠标滑过事件
     mask.onmouseover = function () {
         r_box.style.display = 'block';
         rectangle.style.display = 'block';
@@ -101,10 +103,12 @@ $(function () {
         rectangle.style.display = 'none';
     }
 
-    mask.onmousemove = function (ev) {
-        var _event = ev || window.event;
-        var left = _event.offsetX - rectangle.offsetWidth / 2;
-        var top = _event.offsetY - rectangle.offsetHeight / 2;
+    mask.onmousemove = function (e) {
+        var e = e || window.event;
+        //鼠标在标签中的位置
+        var left = e.offsetX - rectangle.offsetWidth / 2;
+        var top = e.offsetY - rectangle.offsetHeight / 2;
+        //判断鼠标接近边框的时候给固定值
         if (left < 0) {
             left = 0;
         } else if (left > (box.offsetWidth - rectangle.offsetWidth)) {
@@ -113,16 +117,17 @@ $(function () {
 
         if (top < 0) {
             top = 0;
-        } else if (top > (box.offsetHeight - rectangle.offsetHeight)) {
-            top = box.offsetHeight - rectangle.offsetHeight;
+        } else if (top > (mask.offsetHeight - rectangle.offsetHeight)) {
+            top = mask.offsetHeight - rectangle.offsetHeight;
         }
-
+        //小遮罩在大遮罩中的位置
         rectangle.style.left = left + 'px';
         rectangle.style.top = top + 'px';
 
         var percentX = left / (box.offsetWidth - rectangle.offsetWidth);
         var percentY = top / (box.offsetHeight - rectangle.offsetHeight);
 
+        //放大效果的图片的位置
         pic.style.left = -percentX * (pic.offsetWidth - r_box.offsetWidth) + 'px';
         pic.style.top = -percentY * (pic.offsetHeight - r_box.offsetHeight) + 'px';
     }

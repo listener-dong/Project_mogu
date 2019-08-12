@@ -121,6 +121,7 @@
         }
 
         .haader_wrap {
+            background: #fff;
             height: 100px;
 
             .logo {
@@ -1503,6 +1504,114 @@
                         color: #fff;
                         line-height: 24px;
                     }
+                }
+            }
+        }
+    }
+
+    #ceiling {
+        width: 100%;
+        background: #fff;
+        box-shadow: 0 0 10px #666;
+        height: 100px;
+        display: none;
+        position: fixed;
+        top: 0;
+        z-index: 1;
+
+        .logo {
+            float: left;
+            background-image: url(../images/logo_260x200.png);
+            width: 130px;
+            height: 100px;
+            background-size: contain;
+            text-indent: -999px;
+        }
+
+        .category {
+            float: left;
+            font-size: 14px;
+            line-height: 14px;
+            margin: 44px 0 0 30px;
+
+            i {
+                width: 18px;
+                height: 12px;
+                margin-right: 6px;
+                display: inline-block;
+                background-image: url(../images/mulu.png);
+            }
+        }
+
+        .header_wrap_cont {
+            float: left;
+            margin-left: 56px;
+
+            .search {
+                width: 552px;
+                overflow: hidden;
+                border-radius: 6px;
+                position: relative;
+                margin-top: 28px;
+                float: left;
+
+                .val {
+                    width: 100%;
+                    height: 48px;
+                    color: #949590;
+                    text-indent: 16px;
+                    background: #f7f7f7;
+                }
+
+                .search_btn {
+                    width: 58px;
+                    height: 100%;
+                    background-image: url(../images/181205_2llkjh1g0fe27h51ahh5k5f27gkk9_116x96.png);
+                    background-size: contain;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                }
+            }
+
+            .item_nav {
+                float: left;
+                margin: 31px 0 0 14px;
+
+                a {
+                    float: left;
+                    color: #333;
+                    padding: 0 14px;
+                    text-align: center;
+
+                    img {
+                        width: 24px;
+                        height: 24px;
+                        margin-bottom: 6px;
+                    }
+
+                    span {
+                        display: block;
+                        font-size: 12px;
+                        line-height: 12px;
+                    }
+                }
+            }
+
+            .login {
+                float: left;
+                margin: 36px 0 0 40px;
+
+                img {
+                    width: 30px;
+                    height: 30px;
+                }
+
+                span {
+                    color: #333;
+                    font-size: 12px;
+                    line-height: 30px;
+                    margin-left: 6px;
                 }
             }
         }
